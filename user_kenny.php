@@ -9,7 +9,7 @@
             
             <li class="divider"></li>
             <li><a href="#">個人資料設定</a></li>
-            <li><a href="#">登出帳號</a></li>
+            <li><a href="?logout=true">登出帳號</a></li>
           </ul>
         </li>
       </ul>

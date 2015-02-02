@@ -27,19 +27,8 @@
 		</form>
 		<div id="userStatus">
 			<?php
-			include ("modalsignin.php");
+			include ("user_kenny.php");
 			?>
-			<form name="form1" method="post" action="">
-				<input name="username" type="text" class="" placeholder="Enter your account" id="username" value="<?php
-				if (isset($_COOKIE["remUser"])) {echo $_COOKIE["remUser"];
-				}
-				?>">
-				<input name="passwd" type="password" class="" placeholder="Password" id="passwd" value="<?php
-				if (isset($_COOKIE["remPass"])) {echo $_COOKIE["remPass"];
-				}
-				?>">
-				<input type="submit" name="button" id="button" class="" value="登入系統">
-			</form>
 		</div>
 
 		<!-- /.container -->
