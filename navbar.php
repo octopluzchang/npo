@@ -24,6 +24,7 @@
 			<button type="submit" class="btn btn-info">
 				搜尋
 			</button>
+	
 		</form>
 		<div id="userStatus">
 			<?php

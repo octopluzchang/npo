@@ -7,6 +7,9 @@
 				</button>
 				<ul class="dropdown-menu" role="menu">
 					<li>
+						<a href="member_center.php">回到首頁</a>
+					</li>
+					<li>
 						<a href="#">關於我們</a>
 					</li>
 					<li class="divider"></li>
