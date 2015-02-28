@@ -34,7 +34,6 @@ if (isset($_POST["username"]) && isset($_POST["passwd"])) {
 		if (isset($_POST["rememberme"]) && ($_POST["rememberme"] == "true")) {
 			setcookie("remUser", $_POST["username"], time() + 365 * 24 * 60);
 			setcookie("remPass", $_POST["passwd"], time() + 365 * 24 * 60);
-
 		} else {
 			if (isset($_COOKIE["remUser"])) {
 				setcookie("remUser", $_POST["username"], time() - 100);
