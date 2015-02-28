@@ -30,7 +30,7 @@
 		</form>
 		<div id="userStatus">
 			<?php
-			include ("user_anonymous.php");
+			include ("user.php");
 			?>
 		</div>
 
