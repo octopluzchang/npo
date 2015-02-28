@@ -105,7 +105,9 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
   		<div class="row">
     		<div class="col-md-4"></div>
       			<div class="col-md-4 text-center"><img data-src="holder.js/40x40/text:K" class="img-circle"><h1><?php echo $row_RecMember["m_name"]; ?></h1></div>
-      				<div class="col-md-4"></div>
+      				<div class="col-md-4">
+                     <button class="btn btn-default pull-right" type="submit" data-toggle="modal" data-target="#editprofileModal">編輯個人檔案</button>
+                    </div>
     	</div>
  
     	<ul class="nav nav-tabs text-center">
@@ -127,6 +129,7 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
 
 <!-- Filter Modal -->
 		<?php include("modalFilter.php");?>
+        <?php include("modalEditprofile.php");?>
         	</div>
     	</div>
       

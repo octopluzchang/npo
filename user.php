@@ -13,6 +13,7 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
           <ul class="dropdown-menu" role="menu">
             <li><a href="profile.php">正在進行的專案</a></li>
             <li><a href="profile.php">已完成的專案</a></li>
+            <li><a href="profile.php">追蹤中的專案的專案</a></li>
             
             <li class="divider"></li>
             <li><a href="member_update.php">個人資料設定</a></li>
