@@ -52,7 +52,7 @@ if (isset($_POST["username"]) && isset($_POST["passwd"])) {
 	}
 }
 ?>
-<?
+<?php
 //專案資料取出開始
 //預設每頁筆數
 $board_pageRow_records = 10;
@@ -97,7 +97,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
 </head>
 <body>
 
-<?php include("navbar.php"); ?>
+<?php include("navbar.php");?>
 <div class="container">
   <p>資料筆數：<?php echo $board_total_records; ?></p>
   <div class="row">
