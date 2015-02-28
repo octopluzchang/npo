@@ -107,13 +107,12 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
     </div>
     <?php } ?>
   </div>
-    
+
     <?php include("modalProject.php"); ?>
     <?php include("modalFilter.php"); ?>
     <?php include("modalSignup.php"); ?>
     <?php include("modalSignin.php"); ?>
     
-  
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 

@@ -19,7 +19,11 @@ $redirectUrl = "member_center.php";
 $query_RecMember = "SELECT * FROM `memberdata` WHERE `m_username`='" . $_SESSION["loginMember"] . "'";
 $RecMember = mysql_query($query_RecMember);
 $row_RecMember = mysql_fetch_assoc($RecMember);
+
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

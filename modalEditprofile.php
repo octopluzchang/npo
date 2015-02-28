@@ -1,3 +1,62 @@
+<?php
+header("Content-Type: text/html; charset=utf-8");
+require_once ("connMysql.php");
+
+//執行更新動作
+if (isset($_POST["action"]) && ($_POST["action"] == "update")) {
+	$query_update = "UPDATE `memberdata` SET ";
+	//若有修改密碼，則更新密碼。
+	if (($_POST["m_passwd"] != "") && ($_POST["m_passwd"] == $_POST["m_passwdrecheck"])) {
+		$query_update .= "`m_passwd`='" . md5($_POST["m_passwd"]) . "',";
+	}
+	$query_update .= "`m_name`='" . $_POST["m_name"] . "',";
+	$query_update .= "`m_sex`='" . $_POST["m_sex"] . "',";
+	$query_update .= "`m_skill`='" . $_POST["m_skill"] . "',";
+	$query_update .= "`m_swap`='" . $_POST["m_swap"] . "',";
+	$query_update .= "`m_birthday`='" . $_POST["m_birthday"] . "',";
+	$query_update .= "`m_email`='" . $_POST["m_email"] . "',";
+	$query_update .= "`m_url`='" . $_POST["m_url"] . "',";
+	$query_update .= "`m_phone`='" . $_POST["m_phone"] . "',";
+	$query_update .= "`m_address`='" . $_POST["m_address"] . "' ";
+	$query_update .= "WHERE `m_id`=" . $_POST["m_id"];
+
+	mysql_query($query_update);
+
+	if ($_FILES["m_profilepic"]["error"] > 0) {
+		//echo "Error: " . $_FILES["m_profilepic"]["error"];
+	} else {
+		//echo "檔案名稱: " . $_FILES["m_profilepic"]["name"] . "<br/>";
+		//echo "檔案類型: " . $_FILES["m_profilepic"]["type"] . "<br/>";
+		//echo "檔案大小: " . ($_FILES["m_profilepic"]["size"] / 1024) . " Kb<br />";
+		//echo "暫存名稱: " . $_FILES["m_profilepic"]["tmp_name"];
+		move_uploaded_file($_FILES["m_profilepic"]["tmp_name"], "profilepic/" . $_FILES["m_profilepic"]["name"]);
+		$path = $_FILES["m_profilepic"]["name"];
+		$query_update = "UPDATE memberdata SET m_profilepic = '" . $path . "' WHERE `m_id`=" . $_POST["m_id"];
+		//echo $query_update;
+		mysql_query($query_update);
+	}
+	//若有修改密碼，則登出回到首頁。
+	if (($_POST["m_passwd"] != "") && ($_POST["m_passwd"] == $_POST["m_passwdrecheck"])) {
+		unset($_SESSION["loginMember"]);
+		unset($_SESSION["memberLevel"]);
+		$redirectUrl = "index.php";
+	}
+	//重新導向
+	header("Location: $redirectUrl");
+	
+}
+
+//繫結登入會員資料
+$query_RecMember = "SELECT * FROM `memberdata` WHERE `m_username`='" . $_SESSION["loginMember"] . "'";
+$RecMember = mysql_query($query_RecMember);
+$row_RecMember = mysql_fetch_assoc($RecMember);
+
+if (isset($_POST["action"]) && ($_POST["action"] == "update")) {
+	header ("Location profile.php");
+}
+
+?>
+
 <!-- Project Modal -->
     <div class="modal fade" id="editprofileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -115,4 +174,7 @@
           
         </div>
       </div>
+      
+
+      
     </div>
