@@ -60,7 +60,6 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
 		<![endif]-->
 </head>
 <body>
-
 <?php include("navbar_login.php"); ?>
 <div class="container">
   <p>資料筆數：<?php echo $board_total_records; ?></p>
@@ -77,7 +76,6 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
     <?php include("modalSignup.php"); ?>
     <?php include("modalSignin.php"); ?>
     
-  
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
