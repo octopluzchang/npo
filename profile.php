@@ -147,7 +147,7 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
     <div class="container">
   		<div class="row">
     		<div class="col-md-4"></div>
-      			<div class="col-md-4 text-center"><img data-src="holder.js/40x40/text:K" class="img-circle" height="40px" width="40px" src="profilepic/<?php echo $row_RecMember["m_profilepic"]; ?>">
+      			<div class="col-md-4 text-center"><img data-src="holder.js/40x40/text:K" class="img-circle" height="100px" width="100px" src="profilepic/<?php echo $row_RecMember["m_profilepic"]; ?>">
       				<h1><?php echo $row_RecMember["m_name"]; ?></h1></div>
       				<div class="col-md-4">
                      <button class="btn btn-default pull-right" type="submit" data-toggle="modal" data-target="#editprofileModal">編輯個人檔案</button>
