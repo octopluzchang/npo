@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 13, 2015 at 01:49 PM
+-- Generation Time: Mar 14, 2015 at 06:20 PM
 -- Server version: 5.6.22
 -- PHP Version: 5.5.14
 
@@ -223,10 +223,10 @@ CREATE TABLE IF NOT EXISTS `memberdata` (
 INSERT INTO `memberdata` (`m_id`, `m_name`, `m_username`, `m_passwd`, `m_profilepic`, `m_sex`, `m_skill`, `m_swap`, `m_birthday`, `m_level`, `m_email`, `m_url`, `m_phone`, `m_address`, `m_login`, `m_logintime`, `m_jointime`) VALUES
 (1, '系統管理員', 'admin', '21232f297a57a5a743894a0e4a801fc3', NULL, '男', NULL, NULL, NULL, 'admin', NULL, NULL, NULL, NULL, 8, '2014-07-05 19:00:21', '2008-10-20 16:36:15'),
 (11, '王燕博', 'albert', '6c5bc43b443975b806740d8e41146479', NULL, '男', NULL, NULL, '1993-08-10', 'member', 'albert@superstar.com', NULL, '0918976588', '台北市北環路2巷80號', 0, NULL, '2008-10-21 12:06:08'),
-(12, '林冠緯', 'hayasi00', 'eed3c0045d8beee0b7b5ccbf1b158f25', 'IMG_1850.JPG', '男', 'English', '醫生無國界宣傳活動', '1986-02-20', 'member', 'jeremy.hayasi@gmail.com', '', '0917553948', '888', 39, '2015-01-13 21:06:52', '2014-06-16 23:44:25'),
+(12, '林冠緯', 'hayasi00', 'eed3c0045d8beee0b7b5ccbf1b158f25', 'IMG_1850.JPG', '男', 'English', '醫生無國界宣傳活動', '1986-02-17', 'member', 'jeremy.hayasi@gmail.com', '', '0917553948', '888', 41, '2015-03-01 20:19:14', '2014-06-16 23:44:25'),
 (13, '林杰', 'ellen', 'e4707d45c7706fc4649ecac9ca08e698', NULL, '女', NULL, NULL, '1987-12-19', 'member', 'ellen@gmail.com', '', '', '', 4, '2014-06-21 08:30:30', '2014-06-17 23:13:35'),
-(15, '章小八', 'kenny', 'fde290ea8d375a112998beacd5f4cff5', 'IMG_1862.JPG', '男', 'CSS ', 'English', '1111-11-11', 'member', 'kenny@gmail.com', '', '', '', 6, '2015-01-09 00:18:22', '2014-07-05 19:13:39'),
-(18, '流浪狗之家', 'lostdog', '95e0af7778726c0f259fd9349ffb3b56', 'logo.png', '女', '', '徵求Logo設計協助', '1111-11-11', 'member', 'lostdog@gmail.com', '', '', '', 2, '2015-01-10 21:47:16', '2015-01-09 01:07:16');
+(15, '章小八', 'kenny', 'fde290ea8d375a112998beacd5f4cff5', '1957958_3943993854938_665275435_n.jpg', '男', 'CSS ', 'English', '1987-02-15', 'member', 'ckenny0215@gmail.com', '', '', '', 30, '2015-03-14 18:16:45', '2014-07-05 19:13:39'),
+(18, '流浪狗之家', 'lostdog', '95e0af7778726c0f259fd9349ffb3b56', 'logo.png', '女', '', '徵求Logo設計協助', '1111-11-11', 'member', 'lostdog@gmail.com', '', '', '', 3, '2015-03-14 18:10:24', '2015-01-09 01:07:16');
 
 --
 -- Indexes for dumped tables

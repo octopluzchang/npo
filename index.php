@@ -99,6 +99,11 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
 
 <?php include("navbar.php");?>
 <div class="container">
+	<?php if(isset($_GET["errMsg"]) && ($_GET["errMsg"]=="1")){?>
+<div class="errDiv">
+<h3 align="center"><font color="red">登入帳號或密碼錯誤！</font></h3>
+</div>
+<?php } ?>
   <p>資料筆數：<?php echo $board_total_records; ?></p>
   <div class="row">
     <?php while($board_row_RecBoard=mysql_fetch_assoc($board_RecBoard)){ ?>
