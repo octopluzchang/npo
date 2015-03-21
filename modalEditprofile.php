@@ -1,5 +1,5 @@
 <?php
-header("Content-Type: text/html; charset=utf-8");
+//header("Content-Type: text/html; charset=utf-8");
 require_once ("connMysql.php");
 
 //執行更新動作
@@ -41,13 +41,26 @@ if (isset($_POST["action"]) && ($_POST["action"] == "update")) {
 		$redirectUrl = "index.php";
 	}
 	//重新導向
+<<<<<<< Updated upstream
 	header("Location: $redirectUrl");
+=======
+	//header("Location: $redirectUrl");
+	
+>>>>>>> Stashed changes
 }
 
 //繫結登入會員資料
 $query_RecMember = "SELECT * FROM `memberdata` WHERE `m_username`='" . $_SESSION["loginMember"] . "'";
 $RecMember = mysql_query($query_RecMember);
 $row_RecMember = mysql_fetch_assoc($RecMember);
+<<<<<<< Updated upstream
+=======
+
+if (isset($_POST["action"]) && ($_POST["action"] == "update")) {
+	//header ("Location profile.php");
+}
+
+>>>>>>> Stashed changes
 ?>
 
 <!-- Project Modal -->

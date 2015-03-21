@@ -85,6 +85,87 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="style.css" rel="stylesheet" type="text/css">
 <script src="js/holder.js"></script>
+<script>
+
+$.getScript('//cdn.jsdelivr.net/isotope/1.5.25/jquery.isotope.min.js',function(){
+
+  /* activate jquery isotope */
+  $('#posts').imagesLoaded( function(){
+    $('#posts').isotope({
+      itemSelector : '.item'
+    });
+  });
+  
+});
+</script>
+<style>
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.row {
+ -moz-column-width: 25em;
+ -webkit-column-width: 25em;
+ -moz-column-gap: .5em;
+ -webkit-column-gap: .5em; 
+  
+}
+
+.panel {
+ display: inline-block;
+ margin:  .5em;
+ padding:  0; 
+ width:98%;
+}
+
+/* Isotope Transitions
+------------------------------- */
+.isotope,
+.isotope .item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:         top, left, opacity;
+          transition-property:         transform, opacity;
+}
+  
+  
+/* responsive media queries */
+
+@media (max-width: 992px) {
+  header h1 small {
+    display: block;
+  }
+
+  header div.description {
+    padding-top: 9px;
+    padding-bottom: 4px;
+  }
+
+  .isotope .item {
+    position: static ! important;
+    -webkit-transform: translate(0px, 0px) ! important;
+       -moz-transform: translate(0px, 0px) ! important;
+            transform: translate(0px, 0px) ! important;
+  }
+}
+
+</style>
 <title>NPO Lab</title>
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -104,12 +185,13 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
 <h3 align="center"><font color="red">登入帳號或密碼錯誤！</font></h3>
 </div>
 <?php } ?>
-  <p>資料筆數：<?php echo $board_total_records; ?></p>
+  <!--<p>資料筆數：<?php echo $board_total_records; ?></p>-->
   <div class="row">
     <?php while($board_row_RecBoard=mysql_fetch_assoc($board_RecBoard)){ ?>
-    <div class="col-sm-6 col-md-4">   
+    
+    
     <?php include("singleProject.php"); ?>
-    </div>
+    
     <?php } ?>
   </div>
 
@@ -123,5 +205,8 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.min.js"></script>
+
+    
+
 </body>
 </html>
