@@ -9,7 +9,7 @@
 				<h4 class="modal-title" id="myModalLabel">加入公益實驗室</h4>
 			</div>
 			<div class="modal-body">
-			<div align="center">
+			<div>
 				請選擇你是：
 			<a href="member_join.php"><button type="button" class="btn btn-default">
 				學生
