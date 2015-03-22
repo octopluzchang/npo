@@ -1,12 +1,6 @@
 <!-- Single Project-->
-
-
       <div class="panel panel-default">
-       
-        
-		
-          
-          
+     
           <!-- Project Title-->
           <div class="panel-heading">
           <a data-toggle="modal" data-target="#projectModal">
@@ -16,7 +10,6 @@
             <div class="panel-body">
             <!-- Project Status-->
           <span aria-hidden="true" class="glyphicon glyphicon-user"></span> 9/10 <span aria-hidden="true" class="glyphicon glyphicon-time"></span> 2015/10/20 
-          
           
             <!-- Project Tags-->
              
