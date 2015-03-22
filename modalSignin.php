@@ -35,6 +35,9 @@
 									<input type="checkbox">
 									記住我 </label>
 							</div>
+							<div class="forgotpwd">
+							<a href="admin_passmail.php"><button type="button" class="btn btn-default">忘記密碼，補寄密碼信。</button></a>
+							</div>
 						</div>
 					</div>
 					<div class="form-group">

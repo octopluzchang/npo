@@ -25,14 +25,15 @@ if (isset($_POST["action"]) && ($_POST["action"] == "update")) {
 	$query_update .= "`m_name`='" . $_POST["m_name"] . "',";
 	$query_update .= "`m_sex`='" . $_POST["m_sex"] . "',";
 	$query_update .= "`m_skill`='" . $_POST["m_skill"] . "',";
-	$query_update .= "`m_swap`='" . $_POST["m_swap"] . "',";
 	$query_update .= "`m_birthday`='" . $_POST["m_birthday"] . "',";
-	$query_update .= "`m_email`='" . $_POST["m_email"] . "',";
-	$query_update .= "`m_url`='" . $_POST["m_url"] . "',";
+	//$query_update .= "`m_url`='" . $_POST["m_url"] . "',";
 	$query_update .= "`m_phone`='" . $_POST["m_phone"] . "',";
-	$query_update .= "`m_address`='" . $_POST["m_address"] . "' ";
+	$query_update .= "`m_address`='" . $_POST["m_address"] . "', ";
+	$query_update .= "`m_academic`='" . $_POST["m_academic"] . "', ";
+	$query_update .= "`m_description`='" . $_POST["m_description"] . "' ";
 	$query_update .= "WHERE `m_id`=" . $_POST["m_id"];
 	mysql_query($query_update);
+	//echo $query_update;
 
 	if ($_FILES["m_profilepic"]["error"] > 0) {
 		//echo "Error: " . $_FILES["m_profilepic"]["error"];
@@ -54,7 +55,7 @@ if (isset($_POST["action"]) && ($_POST["action"] == "update")) {
 		$redirectUrl = "index.php";
 	}
 	//重新導向
-	header("Location: $redirectUrl");
+	//header("Location: $redirectUrl");
 }
 
 //繫結登入會員資料
@@ -72,65 +73,63 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
 <link href="style.css" rel="stylesheet" type="text/css">
 <script src="js/holder.js"></script>
 <script language="javascript">
-	function checkForm() {
-		if (document.formJoin.m_passwd.value != "" || document.formJoin.m_passwdrecheck.value != "") {
-			if (!check_passwd(document.formJoin.m_passwd.value, document.formJoin.m_passwdrecheck.value)) {
-				document.formJoin.m_passwd.focus();
-				return false;
+				function checkForm() {
+				if (document.formJoin.m_username.value == "") {
+					alert("請填寫電子郵件!");
+					document.formJoin.m_username.focus();
+					return false;
+				}
+				if (!check_passwd(document.formJoin.m_passwd.value, document.formJoin.m_passwdrecheck.value)) {
+					document.formJoin.m_passwd.focus();
+					return false;
+				}
+				if (document.formJoin.m_name.value == "") {
+					alert("請填寫姓名!");
+					document.formJoin.m_name.focus();
+					return false;
+				}
+				if (document.formJoin.m_birthday.value == "") {
+					alert("請填寫生日!");
+					document.formJoin.m_birthday.focus();
+					return false;
+				}
+				if (!checkmail(document.formJoin.m_username)) {
+					document.formJoin.m_username.focus();
+					return false;
+				}
+				return confirm('確定送出嗎？');
 			}
-		}
-		if (document.formJoin.m_name.value == "") {
-			alert("請填寫姓名!");
-			document.formJoin.m_name.focus();
-			return false;
-		}
-		if (document.formJoin.m_birthday.value == "") {
-			alert("請填寫生日!");
-			document.formJoin.m_birthday.focus();
-			return false;
-		}
-		if (document.formJoin.m_email.value == "") {
-			alert("請填寫電子郵件!");
-			document.formJoin.m_email.focus();
-			return false;
-		}
-		if (!checkmail(document.formJoin.m_email)) {
-			document.formJoin.m_email.focus();
-			return false;
-		}
-		return confirm('確定送出嗎？');
-	}
 
-	function check_passwd(pw1, pw2) {
-		if (pw1 == '') {
-			alert("密碼不可以空白!");
-			return false;
-		}
-		for (var idx = 0; idx < pw1.length; idx++) {
-			if (pw1.charAt(idx) == ' ' || pw1.charAt(idx) == '\"') {
-				alert("密碼不可以含有空白或雙引號 !\n");
-				return false;
+			function check_passwd(pw1, pw2) {
+				if (pw1 == '') {
+					alert("密碼不可以空白!");
+					return false;
+				}
+				for (var idx = 0; idx < pw1.length; idx++) {
+					if (pw1.charAt(idx) == ' ' || pw1.charAt(idx) == '\"') {
+						alert("密碼不可以含有空白或雙引號 !\n");
+						return false;
+					}
+					if (pw1.length < 5 || pw1.length > 10) {
+						alert("密碼長度只能5到10個字母 !\n");
+						return false;
+					}
+					if (pw1 != pw2) {
+						alert("密碼二次輸入不一樣,請重新輸入 !\n");
+						return false;
+					}
+				}
+				return true;
 			}
-			if (pw1.length < 5 || pw1.length > 10) {
-				alert("密碼長度只能5到10個字母 !\n");
-				return false;
-			}
-			if (pw1 != pw2) {
-				alert("密碼二次輸入不一樣,請重新輸入 !\n");
-				return false;
-			}
-		}
-		return true;
-	}
 
-	function checkmail(myEmail) {
-		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		if (filter.test(myEmail.value)) {
-			return true;
-		}
-		alert("電子郵件格式不正確");
-		return false;
-	}
+			function checkmail(myEmail) {
+				var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				if (filter.test(myEmail.value)) {
+					return true;
+				}
+				alert("電子郵件格式不正確");
+				return false;
+			}
     </script>
 <title>NPO Lab</title>
 <!-- Bootstrap -->
@@ -207,7 +206,7 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
 							<br>
 						</p>
 						<p>
-							確認密碼 ：
+							確認密碼：
 							<input name="m_passwdrecheck" type="password" class="normalinput" id="m_passwdrecheck">
 							<br>
 							若不修改密碼，請不要填寫。若要修改，請輸入密碼二次。
@@ -220,7 +219,7 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
 						</div>
 						<br>
 						<p>
-							真實姓名：
+							姓　　名：
 							<input name="m_name" type="text" class="normalinput" id="m_name" value="<?php echo $row_RecMember["m_name"]; ?>">
 							<font color="#FF0000">*</font>
 						</p>
@@ -240,15 +239,10 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
 						</p>
 						<p>
 							生　　日：
-							<input name="m_birthday" type="text" class="normalinput" id="m_birthday" value="<?php echo $row_RecMember["m_birthday"]; ?>">
+							<input name="m_birthday" type="date" class="normalinput" id="m_birthday" value="<?php echo $row_RecMember["m_birthday"]; ?>">
 							<font color="#FF0000">*</font>
 							<br>
 							為西元格式(YYYY-MM-DD)。
-						</p>
-						<p>
-							電子郵件：
-							<input name="m_email" type="text" class="normalinput" id="m_email" value="<?php echo $row_RecMember["m_email"]; ?>">
-							<font color="#FF0000">*</font>
 						</p>
 						<p>
 							請確定此電子郵件為可使用狀態，以方便未來如補寄會員密碼信。
@@ -263,16 +257,20 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
 						</p>
 
 						<div class="boardtopic">
-							<h4> 技能資料 </h4>
+							<h4> 專業資料 </h4>
 						</div>
 						<br>
 						<p>
-							My Skill：
+							技　　能：
 							<input name="m_skill" type="text" class="normalinput" id="m_skill" value="<?php echo $row_RecMember["m_skill"]; ?>">
 						</p>
 						<p>
-							My Swap：
-							<input name="m_swap" type="text" class="normalinput" id="m_swap" value="<?php echo $row_RecMember["m_swap"]; ?>">
+						學　　歷：
+						<input name="m_academic" type="text" class="normalinput" id="m_academic" value="<?php echo $row_RecMember["m_academic"]; ?>">
+						</p>
+						<p>
+						自　　介：
+						<textarea name="m_description" id="m_description" cols="40" rows="4" class="span3"><?php echo $row_RecMember["m_description"]; ?></textarea>
 						</p>
 						<hr>
 						<p>

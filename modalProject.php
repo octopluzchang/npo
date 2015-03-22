@@ -1,3 +1,19 @@
+<?php
+header("Content-Type: text/html; charset=utf-8");
+require_once ("connMysql.php");
+
+//未加限制顯示筆數的SQL敘述句
+$board_query_RecBoard = "SELECT * FROM `board` ORDER BY `boardtime` DESC";
+
+//加上限制顯示筆數的SQL敘述句，由本頁開始記錄筆數開始，每頁顯示預設筆數
+$board_query_limit_RecBoard = $board_query_RecBoard . " LIMIT " . $board_startRow_records . ", " . $board_pageRow_records;
+//以加上限制顯示筆數的SQL敘述句查詢資料到 $RecBoard 中
+$board_RecBoard = mysql_query($board_query_limit_RecBoard);
+//以未加上限制顯示筆數的SQL敘述句查詢資料到 $all_RecBoard 中
+$board_all_RecBoard = mysql_query($board_query_RecBoard);
+$board_row_RecBoard=mysql_fetch_assoc($board_RecBoard);
+?>
+
 <!-- Project Modal -->
     <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -9,7 +25,9 @@
           </div>
           <div class="modal-body"> <img data-src="holder.js/568x300">
             <h4 class="modal-title" id="myModalLabel"> <small>12091288</small></h4>
+            <h2 align="center"><?php echo $board_row_RecBoard["boardsubject"]; ?></h2>
             <p> 專案日期 2015/10/10 </p>
+            <h3><?php echo $board_row_RecBoard["boardcontent"]; ?></h3>
           </div>
           <div class="modal-footer">
             <div class="media">

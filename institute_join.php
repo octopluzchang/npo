@@ -60,14 +60,14 @@ if (isset($_POST["action"]) && ($_POST["action"] == "join")) {
 		header("Location: member_join.php?errMsg=1&username=" . $_POST["m_username"]);
 	} else {
 		//若沒有執行新增的動作
-		$query_insert = "INSERT INTO `memberdata` (`m_name` ,`m_username` ,`m_passwd`, `m_status`, `m_phone`,`m_address`, `m_description`, `m_jointime`) VALUES (";
+		$query_insert = "INSERT INTO `memberdata` (`m_name` ,`m_username` ,`m_passwd`, `m_birthday`, `m_status`, `m_phone`,`m_address`, `m_description`, `m_jointime`) VALUES (";
 		$query_insert .= "'" . $_POST["m_name"] . "',";
 		$query_insert .= "'" . $_POST["m_username"] . "',";
 		$query_insert .= "'" . md5($_POST["m_passwd"]) . "',";
 		//$query_insert .= "'" . $_POST["m_sex"] . "',";
 		//$query_insert .= "'" . $_POST["m_profilepic"] . "',";
 		//$query_insert .= "'" . $_POST["m_skill"] . "',";
-		//$query_insert .= "'" . $_POST["m_birthday"] . "',";
+		$query_insert .= "'" . $_POST["m_birthday"] . "',";
 		$query_insert .= "'institute',";
 		$query_insert .= "'" . $_POST["m_phone"] . "',";
 		$query_insert .= "'" . $_POST["m_address"] . "',";
@@ -111,6 +111,11 @@ if (isset($_POST["action"]) && ($_POST["action"] == "join")) {
 				if (document.formJoin.m_name.value == "") {
 					alert("請填寫名稱!");
 					document.formJoin.m_name.focus();
+					return false;
+				}
+				if (document.formJoin.m_birthday.value == "") {
+					alert("請填寫成立時間!");
+					document.formJoin.m_birthday.focus();
 					return false;
 				}
 				if (!checkmail(document.formJoin.m_username)) {
@@ -209,6 +214,13 @@ if (isset($_POST["action"]) && ($_POST["action"] == "join")) {
 						<strong>名　　稱</strong>：
 						<input name="m_name" type="text" class="normalinput" id="m_name">
 						<font color="#FF0000">*</font>
+					</p>
+					<p>
+						<strong>成立時間</strong>：
+						<input name="m_birthday" type="date" class="normalinput" id="m_birthday">
+						<font color="#FF0000">*</font>
+						<br>
+						<span class="smalltext">為西元格式(YYYY-MM-DD)。</span>
 					</p>
 					<p>
 						<strong>電　　話</strong>：

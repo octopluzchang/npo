@@ -8,7 +8,7 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
 ?>
 <div class="nav navbar-nav navbar-right navbar-btn">
         <div class="btn-group">
-        	<button type="button" class="btn btn-default dropdown-toggle"><a href="profile.php"><?php echo $row_RecMember["m_username"];?></a></button>
+        	<button type="button" class="btn btn-default dropdown-toggle"><a href="profile.php"><?php echo $row_RecMember["m_name"];?></a></button>
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
     		<span class="caret"></span>
     			<span class="sr-only">Toggle Dropdown</span>
