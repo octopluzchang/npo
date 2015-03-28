@@ -19,7 +19,7 @@ $RecMember = mysql_query($query_RecMember);
 $row_RecMember = mysql_fetch_assoc($RecMember);
 
 //預設每頁筆數
-$board_pageRow_records = 5;
+$board_pageRow_records = 10;
 //預設頁數
 $board_num_pages = 1;
 //若已經有翻頁，將頁數更新

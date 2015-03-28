@@ -37,11 +37,8 @@ $board_RecBoard = mysql_query($board_query_limit_RecBoard);
 $board_all_RecBoard = mysql_query($board_query_RecBoard);
 $board_row_RecBoard=mysql_fetch_assoc($board_RecBoard);
 
-$projectName = "SELECT * FROM `board` WHERE `boardsubject` =". $boardId;
-
-
+//$projectName = "SELECT * FROM `board` WHERE `boardsubject` =". $boardId;
 ?>
-
 <!-- Project Modal -->
     <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -52,16 +49,13 @@ $projectName = "SELECT * FROM `board` WHERE `boardsubject` =". $boardId;
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
           </div>
           <div class="modal-body"> 
-          	
-          <h2><?php echo $board_row_RecBoard["boardsubject"]; ?>
-          	<?php echo $projectName;?>
-          </h2>
+          <h2><?php echo $board_row_RecBoard["boardsubject"]; ?></h2>
             <h4 class="modal-title" id="myModalLabel"> <small>12091288</small></h4>
             <h2 align="center"></h2>
-            <p> 專案日期 2015/10/10 </p>
-<<<<<<< HEAD
+            <p> 專案日期：<?php echo $board_row_RecBoard["boardtime"];?> </p>
+
             <h3><?php echo $board_row_RecBoard["boardcontent"]; ?></h3>
-=======
+            
             <p> 專案說明...BlablaBlablaBlablaBlabla...BlablaBlablaBlablaBlabla </p>
 >>>>>>> origin/master
           </div>

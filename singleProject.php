@@ -5,11 +5,7 @@
           <div class="panel-heading">
           <a data-toggle="modal" data-target="#projectModal">
             <h2><?php echo $board_row_RecBoard["boardsubject"]; ?></h2>
-            <?php 
             
-            $boardId = $board_row_RecBoard["boardid"];
-            
-            ?>
             </a>
             </div>
             <div class="panel-body">
