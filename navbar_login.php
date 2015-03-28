@@ -26,7 +26,7 @@
 				<input name="type" type="hidden" value="xxxx" />
 				<!-- 隱藏數值 -->
 			</div>
-			<input name="ok" class="btn btn-info" type="submit" value="檢索" />
+			<input name="ok" class="btn btn-info" type="submit" value="搜尋" />
 			<input name="retype" class="btn btn-info" type="reset" value="重設" />
 		</form>
 		<div id="userStatus">

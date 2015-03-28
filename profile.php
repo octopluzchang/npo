@@ -290,6 +290,7 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
 		</div>
 	</div>
 </div>
+<?php include("board_post.php");?>
 
         	</div>
     	</div>

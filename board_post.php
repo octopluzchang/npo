@@ -60,15 +60,15 @@ if (isset($_POST["action"]) && ($_POST["action"] == "add")) {
 						<input type="text" class="span3" name="boardsubject" id="boardsubject" required="required">
 					</p>
 					<p>
-						塗鴉內容
+						專案介紹
 					</p>
 					<p>
-						<textarea name="boardcontent" id="boardcontent" class="span3" cols="8" rows="8"></textarea>
+						<textarea name="boardcontent" id="boardcontent" class="span3" cols="40" rows="4"></textarea>
 					</p>
 					
 						<div class="sumit">
 							<input name="action" type="hidden" id="action" value="add">
-							<input type="submit" name="button" id="button" value="送出留言">
+							<input type="submit" name="button" id="button" value="張貼新專案">
 							<input type="reset" name="button2" id="button2" value="重設資料">
 							<input type="button" name="button3" id="button3" value="回上一頁" onClick="window.history.back();">
 						</div>
