@@ -18,7 +18,7 @@
              
           
             <div class="media">
-              <div class="media-left"> <img data-src="holder.js/40x40/text:K" class="img-circle"><br> <?php echo $board_row_RecBoard["name"]; ?></div>
+              <div class="media-left"> <img data-src="holder.js/40x40/text:K" class="img-circle" ><br> <?php echo $board_row_RecBoard["boardname"]; ?></div>
               <div class="media-body"> <?php echo nl2br($board_row_RecBoard["boardcontent"]); ?> </div>
             </div>
           </div>

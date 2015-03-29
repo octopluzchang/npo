@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 14, 2015 at 06:20 PM
+-- Generation Time: Mar 28, 2015 at 03:59 PM
 -- Server version: 5.6.22
 -- PHP Version: 5.5.14
 
@@ -164,31 +164,26 @@ CREATE TABLE IF NOT EXISTS `board` (
   `boardmail` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `boardweb` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `boardcontent` text COLLATE utf8_unicode_ci,
-  `username` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=26 ;
+  `username` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `board`
 --
 
-INSERT INTO `board` (`boardid`, `boardname`, `boardsex`, `boardsubject`, `boardtime`, `boardmail`, `boardweb`, `boardcontent`, `username`) VALUES
-(1, '茶米', '男', '這是第一則留言', '2008-10-16 11:25:30', 'david@e-happy.com.tw', 'http://www.e-happy.com.tw', '這是茶米的第一則留言！', NULL),
-(2, 'Lily', '女', '好棒喔，真不錯。', '2008-10-16 11:27:30', 'lily@e-happy.com.tw', '', '我也很喜歡這個留言版！', NULL),
-(3, '路人甲', '男', '我也來加油', '2008-10-16 11:36:51', '', 'http://www.e-happy.com.tw', '路過，我也來加油喔！\r\n灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水灌水。', NULL),
-(4, '路人乙', '男', '我也要學！', '2008-10-16 11:38:23', '', '', '請問這個程式很難嗎？\r\n我也好想學喔！', NULL),
-(5, '學員A', '女', '好漂亮的留言版', '2008-10-16 11:39:47', '', '', '這個留言版好漂亮喔！', NULL),
-(6, '學員B', '女', '這是我第一次留言', '2008-10-16 11:40:25', '', '', '這是我第一次留言，\r\n希望大家多多指教。', NULL),
-(7, '茶米', '男', '感謝大家的測試！', '2008-10-16 11:47:12', 'david@e-happy.com.tw', 'http://www.e-happy.com.tw', '感謝大家的測試！\r\n也希望大家多多棒場。', NULL),
-(8, '動物之家', '女', '徵求設計系學生協助', '2014-06-15 16:10:08', '', '', '尋找設計系學生協助設計Lego', NULL),
-(13, '慈濟', '男', '尋找學生志工', '2014-06-17 23:43:50', '', '', '尋找免費的肝可以讓我們剝削', 'hayasi00'),
-(14, '流放狗之家', '男', '尋找學生設計活動', '2014-06-17 23:46:14', '', '', '救救流浪狗的活動，舞台將選在西門町紅樓上', 'hayasi00'),
-(15, '尋找老人看護志工', '男', '照護之家', '2014-06-17 23:46:36', '', '', '徵求有興趣照顧老人的學生', 'hayasi00'),
-(16, '河東獅吼', '男', '設計系學生，願意提供技能', '2014-06-17 23:47:35', '', '', '擅長設計，請各位聯繫，將可滿足需求', 'hayasi00'),
-(19, '醫生無國界', '男', '重新規劃醫療無國界活動專案', '2014-06-19 23:44:43', '', '', '徵求設計系的學生參加', 'ellen'),
-(20, '台北市政府', '女', '徵求海選民間委員', '2014-06-19 23:44:52', '', '', '協助尋找都更專家', 'ellen'),
-(21, '流浪狗之家', '男', '徵求學生志工', '2014-06-21 09:06:58', '', '', '希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗', 'ellen'),
-(24, '流浪狗之家', '男', '徵求設計系學生協助廣宣品設計', '2014-12-24 00:36:51', NULL, NULL, '徵求設計系學生一起加入', 'hayasi00'),
-(25, NULL, '男', '徵求專案管理師', '2015-01-09 01:10:44', NULL, NULL, '想要接受實際訓練的學生有福了，流浪狗之家誠徵專案管理師', 'lostdog');
+INSERT INTO `board` (`boardid`, `boardname`, `boardsex`, `boardsubject`, `boardtime`, `boardmail`, `boardweb`, `boardcontent`, `username`, `name`) VALUES
+(8, '動物之家', '女', '徵求設計系學生協助', '2014-06-15 16:10:08', '', '', '尋找設計系學生協助設計Lego', NULL, NULL),
+(13, '慈濟', '男', '尋找學生志工', '2014-06-17 23:43:50', '', '', '尋找免費的肝可以讓我們剝削', 'hayasi00', NULL),
+(14, '流放狗之家', '男', '尋找學生設計活動', '2014-06-17 23:46:14', '', '', '救救流浪狗的活動，舞台將選在西門町紅樓上', 'hayasi00', NULL),
+(15, '尋找老人看護志工', '男', '照護之家', '2014-06-17 23:46:36', '', '', '徵求有興趣照顧老人的學生', 'hayasi00', NULL),
+(16, '河東獅吼', '男', '設計系學生，願意提供技能', '2014-06-17 23:47:35', '', '', '擅長設計，請各位聯繫，將可滿足需求', 'hayasi00', NULL),
+(19, '醫生無國界', '男', '重新規劃醫療無國界活動專案', '2014-06-19 23:44:43', '', '', '徵求設計系的學生參加', 'ellen', NULL),
+(20, '台北市政府', '女', '徵求海選民間委員', '2014-06-19 23:44:52', '', '', '協助尋找都更專家', 'ellen', NULL),
+(21, '流浪狗之家', '男', '徵求學生志工', '2014-06-21 09:06:58', '', '', '希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗', 'ellen', NULL),
+(24, '流浪狗之家', '男', '徵求設計系學生協助廣宣品設計', '2014-12-24 00:36:51', NULL, NULL, '徵求設計系學生一起加入', 'hayasi00', '流浪狗之家'),
+(26, NULL, '男', '111', '2015-03-28 15:51:54', NULL, NULL, '111', 'lostdog@gmail.com', '流浪狗之家'),
+(27, '流浪狗之家', '男', '222', '2015-03-28 15:54:44', NULL, NULL, '222', 'lostdog@gmail.com', '流浪狗之家');
 
 -- --------------------------------------------------------
 
@@ -204,29 +199,31 @@ CREATE TABLE IF NOT EXISTS `memberdata` (
   `m_profilepic` text COLLATE utf8_unicode_ci,
   `m_sex` enum('男','女') COLLATE utf8_unicode_ci NOT NULL,
   `m_skill` text COLLATE utf8_unicode_ci,
-  `m_swap` text COLLATE utf8_unicode_ci,
   `m_birthday` date DEFAULT NULL,
   `m_level` enum('admin','member') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'member',
-  `m_email` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `m_status` enum('student','institute') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'student',
   `m_url` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `m_phone` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `m_address` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `m_academic` text COLLATE utf8_unicode_ci,
+  `m_description` text COLLATE utf8_unicode_ci,
   `m_login` int(11) unsigned NOT NULL DEFAULT '0',
   `m_logintime` datetime DEFAULT NULL,
   `m_jointime` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `memberdata`
 --
 
-INSERT INTO `memberdata` (`m_id`, `m_name`, `m_username`, `m_passwd`, `m_profilepic`, `m_sex`, `m_skill`, `m_swap`, `m_birthday`, `m_level`, `m_email`, `m_url`, `m_phone`, `m_address`, `m_login`, `m_logintime`, `m_jointime`) VALUES
-(1, '系統管理員', 'admin', '21232f297a57a5a743894a0e4a801fc3', NULL, '男', NULL, NULL, NULL, 'admin', NULL, NULL, NULL, NULL, 8, '2014-07-05 19:00:21', '2008-10-20 16:36:15'),
-(11, '王燕博', 'albert', '6c5bc43b443975b806740d8e41146479', NULL, '男', NULL, NULL, '1993-08-10', 'member', 'albert@superstar.com', NULL, '0918976588', '台北市北環路2巷80號', 0, NULL, '2008-10-21 12:06:08'),
-(12, '林冠緯', 'hayasi00', 'eed3c0045d8beee0b7b5ccbf1b158f25', 'IMG_1850.JPG', '男', 'English', '醫生無國界宣傳活動', '1986-02-17', 'member', 'jeremy.hayasi@gmail.com', '', '0917553948', '888', 41, '2015-03-01 20:19:14', '2014-06-16 23:44:25'),
-(13, '林杰', 'ellen', 'e4707d45c7706fc4649ecac9ca08e698', NULL, '女', NULL, NULL, '1987-12-19', 'member', 'ellen@gmail.com', '', '', '', 4, '2014-06-21 08:30:30', '2014-06-17 23:13:35'),
-(15, '章小八', 'kenny', 'fde290ea8d375a112998beacd5f4cff5', '1957958_3943993854938_665275435_n.jpg', '男', 'CSS ', 'English', '1987-02-15', 'member', 'ckenny0215@gmail.com', '', '', '', 30, '2015-03-14 18:16:45', '2014-07-05 19:13:39'),
-(18, '流浪狗之家', 'lostdog', '95e0af7778726c0f259fd9349ffb3b56', 'logo.png', '女', '', '徵求Logo設計協助', '1111-11-11', 'member', 'lostdog@gmail.com', '', '', '', 3, '2015-03-14 18:10:24', '2015-01-09 01:07:16');
+INSERT INTO `memberdata` (`m_id`, `m_name`, `m_username`, `m_passwd`, `m_profilepic`, `m_sex`, `m_skill`, `m_birthday`, `m_level`, `m_status`, `m_url`, `m_phone`, `m_address`, `m_academic`, `m_description`, `m_login`, `m_logintime`, `m_jointime`) VALUES
+(1, '系統管理員', 'admin', '21232f297a57a5a743894a0e4a801fc3', NULL, '男', NULL, NULL, 'admin', 'student', NULL, NULL, NULL, NULL, NULL, 8, '2014-07-05 19:00:21', '2008-10-20 16:36:15'),
+(11, '王燕博', 'albert', '6c5bc43b443975b806740d8e41146479', NULL, '男', NULL, '1993-08-10', 'member', 'student', NULL, '0918976588', '台北市北環路2巷80號', NULL, NULL, 0, NULL, '2008-10-21 12:06:08'),
+(12, '林冠緯', 'hayasi00', 'eed3c0045d8beee0b7b5ccbf1b158f25', 'IMG_1850.JPG', '男', 'English', '1986-02-17', 'member', 'student', '', '0917553948', '888', NULL, NULL, 41, '2015-03-01 20:19:14', '2014-06-16 23:44:25'),
+(13, '林杰', 'ellen', 'e4707d45c7706fc4649ecac9ca08e698', NULL, '女', NULL, '1987-12-19', 'member', 'student', '', '', '', NULL, NULL, 4, '2014-06-21 08:30:30', '2014-06-17 23:13:35'),
+(15, '章小八', 'kenny', 'fde290ea8d375a112998beacd5f4cff5', '1957958_3943993854938_665275435_n.jpg', '男', 'CSS ', '1987-02-15', 'member', 'student', '', '', '', '', '', 45, '2015-03-28 15:36:44', '2014-07-05 19:13:39'),
+(18, '流浪狗之家', 'lostdog@gmail.com', '95e0af7778726c0f259fd9349ffb3b56', '流浪狗之家.jpg', '女', '', '1111-11-11', 'member', 'institute', '', '', '', '', '44444', 11, '2015-03-28 15:37:13', '2015-01-09 01:07:16'),
+(25, '喜憨兒之家', '22222@gmail.com', '3d2172418ce305c7d16d4b05597c6a59', '喜憨兒之家.jpg', '男', '', '1111-11-11', 'member', 'institute', NULL, '22222', '22222', '', '44444', 1, '2015-03-21 23:14:56', '2015-03-21 23:14:40');
 
 --
 -- Indexes for dumped tables
@@ -280,12 +277,12 @@ MODIFY `ap_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=91;
 -- AUTO_INCREMENT for table `board`
 --
 ALTER TABLE `board`
-MODIFY `boardid` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+MODIFY `boardid` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `memberdata`
 --
 ALTER TABLE `memberdata`
-MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -9,24 +9,29 @@ $seldb = @mysql_select_db("npo");
 if (!$seldb)
 	die("Could not find database!");
 
-//待解決問題
-//$s_SEARCH_CODE = str_replace(ARRAY(',', '，', ';', '　', //全型空白
-//'  '), ' ', $_POST["input"]);
-//$m_SERACH_CODE = explode(" ",$s_SEARCH_CODE);
+//單一Table多重搜尋欄位
+$s_SEARCH_CODE = str_replace(ARRAY(',', '，', ';', '　', //全型空白
+'  '), ' ', $_POST["input"]);
 
-//$sql_query = "SELECT * FROM board WHERE (0=1";
-//for($i=0,$max_i= COUNT($s_SERACH_CODE); $i < $max_i ; $i++)
-//{
-//  $sql_query .= " OR CONCAT(`boardsubject`,`name`) LIKE '%{$m_SEARCH_CODE[$i]}%' ";
-//}
-//$sql_query.= " ) ";
-//echo $sql_query;
+//echo "s_SEARCH_CODE = {$s_SEARCH_CODE}<br>";
 
-$sql_query = " SELECT * FROM board WHERE boardsubject LIKE '%" . $_POST["input"] . "%'
-OR name LIKE '%" . $_POST["input"] . "%' ";
-
+$m_SEARCH_CODE = explode(" ",$s_SEARCH_CODE);
+print_r($m_SERACH_CODE);
+$sql_query = "SELECT * FROM board WHERE (0=1";
+for($i=0,$max_i= COUNT($m_SEARCH_CODE); $i < $max_i ; $i++)
+{
+  $sql_query .= " OR CONCAT(`boardsubject`,ifnull(`name`,'')) LIKE '%{$m_SEARCH_CODE[$i]}%' ";
+}
+$sql_query.= " ) ";
 //測試回傳值是否正確
 //echo $sql_query;
+
+//舊方法
+//$sql_query = " SELECT * FROM board WHERE boardsubject LIKE '%" . $_POST["input"] . "%'
+//OR name LIKE '%" . $_POST["input"] . "%' ";
+//測試回傳值是否正確
+//echo $sql_query;
+
 $result = mysql_query($sql_query);
 if (!$result) {
 	echo "Could not successfully run query ($sql_query) from DB: " . mysql_error();
@@ -55,6 +60,15 @@ if (mysql_num_rows($result) == 0) {
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<script language="javascript">
+		function checkForm() {
+				if (document.search.input.value == "") {
+					alert("請填寫搜尋欄!");
+					document.search.input.focus();
+					return false;
+				}
+		}	
+		</script>
 	</head>
 	<body>
 		<?php
@@ -117,5 +131,7 @@ if (mysql_num_rows($result) == 0) {
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
+		
 	</body>
 </html>
+

@@ -57,13 +57,13 @@ if (isset($_POST["action"]) && ($_POST["action"] == "add")) {
 						標題
 					</p>
 					<p>
-						<input type="text" class="span3" name="boardsubject" id="boardsubject" required="required">
+						<input type="text" class="form-control" name="boardsubject" id="boardsubject" required="required">
 					</p>
 					<p>
 						專案介紹
 					</p>
 					<p>
-						<textarea name="boardcontent" id="boardcontent" class="span3" cols="40" rows="4"></textarea>
+						<textarea name="boardcontent" id="boardcontent" class="form-control" rows="10"></textarea>
 					</p>
 					
 						<div class="sumit">
