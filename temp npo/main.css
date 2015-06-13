@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    background: #f3f3f3;
+}
+
+/*Navigation Bar*/
+.navBar {
+    width: 100%;
+    background-color:#999;
+    left: 0;
+    top: 0;
+    padding: 5px 0;
+    position: fixed;
+    float: left;
+}
+
+.navBar .left {
+    float: left;
+}
+
+.searchBar {
+    padding: 10px;
+    background-color: #fff;
+    float: left;
+    
+}
+
+.searchInput {
+    background-color: #f2f2f2;
+    padding: 5px 10px;
+}
+
+.navBar .right {
+    float: right;
+    padding: 10px;
+}
+
+
+.logo {
+    width: 100px;
+    float: left;
+    color: #fff;
+    padding: 10px;
+    
+}
+
+.tagContainer {
+}
+
+.signUp, .signIn {
+    color: #fff;
+    float: inherit;
+    margin-left: 10px;
+}
+
+/*Project Pool*/
+
+.pool {
+    width: 1024px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.project {
+    width: 300px;
+    float: left;
+    box-shadow: 0 3px 7px rba(0,0,0,0.3);
+    background-color: #fff;
+    margin: 0 10px 20px;
+}
+
+
+.projectContent, .projectHeader, .projectFooter {
+    margin: 5px;
+}
+
+
+
+
+
+.projectHeader {
+    margin-bottom: 20px;
+}
+
+
+.projectImage {
+    height: 150px;
+    width: auto;
+    overflow: hidden;
+    background-color: #989898;
+}
+
+.projectInfo {
+    margin: 5px 0;
+    font-size: 13px
+}
+
+.userAvator {
+    float: inherit;
+    width: 50px;
+    height: 50px;
+}
+
+.userName {
+    float: inherit;
+}
+
+h3.projectName {
+    margin: 0;
+}
+
+.projectFooter {
+    padding: 10px 0;
+}
+
+.projectContent {
+    padding: 10px 0;
+}
