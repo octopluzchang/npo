@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 28, 2015 at 03:59 PM
--- Server version: 5.6.22
--- PHP Version: 5.5.14
+-- Generation Time: Jun 13, 2015 at 03:22 AM
+-- Server version: 5.6.24
+-- PHP Version: 5.5.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -159,6 +159,8 @@ CREATE TABLE IF NOT EXISTS `board` (
 `boardid` int(11) unsigned NOT NULL,
   `boardname` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `boardsex` enum('男','女') COLLATE utf8_unicode_ci DEFAULT '男',
+  `boardtag` enum('設計','行銷','網站') COLLATE utf8_unicode_ci DEFAULT '設計',
+  `label` set('A','B') COLLATE utf8_unicode_ci DEFAULT NULL,
   `boardsubject` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `boardtime` datetime DEFAULT NULL,
   `boardmail` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -166,24 +168,28 @@ CREATE TABLE IF NOT EXISTS `board` (
   `boardcontent` text COLLATE utf8_unicode_ci,
   `username` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `name` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=36 ;
 
 --
 -- Dumping data for table `board`
 --
 
-INSERT INTO `board` (`boardid`, `boardname`, `boardsex`, `boardsubject`, `boardtime`, `boardmail`, `boardweb`, `boardcontent`, `username`, `name`) VALUES
-(8, '動物之家', '女', '徵求設計系學生協助', '2014-06-15 16:10:08', '', '', '尋找設計系學生協助設計Lego', NULL, NULL),
-(13, '慈濟', '男', '尋找學生志工', '2014-06-17 23:43:50', '', '', '尋找免費的肝可以讓我們剝削', 'hayasi00', NULL),
-(14, '流放狗之家', '男', '尋找學生設計活動', '2014-06-17 23:46:14', '', '', '救救流浪狗的活動，舞台將選在西門町紅樓上', 'hayasi00', NULL),
-(15, '尋找老人看護志工', '男', '照護之家', '2014-06-17 23:46:36', '', '', '徵求有興趣照顧老人的學生', 'hayasi00', NULL),
-(16, '河東獅吼', '男', '設計系學生，願意提供技能', '2014-06-17 23:47:35', '', '', '擅長設計，請各位聯繫，將可滿足需求', 'hayasi00', NULL),
-(19, '醫生無國界', '男', '重新規劃醫療無國界活動專案', '2014-06-19 23:44:43', '', '', '徵求設計系的學生參加', 'ellen', NULL),
-(20, '台北市政府', '女', '徵求海選民間委員', '2014-06-19 23:44:52', '', '', '協助尋找都更專家', 'ellen', NULL),
-(21, '流浪狗之家', '男', '徵求學生志工', '2014-06-21 09:06:58', '', '', '希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗', 'ellen', NULL),
-(24, '流浪狗之家', '男', '徵求設計系學生協助廣宣品設計', '2014-12-24 00:36:51', NULL, NULL, '徵求設計系學生一起加入', 'hayasi00', '流浪狗之家'),
-(26, NULL, '男', '111', '2015-03-28 15:51:54', NULL, NULL, '111', 'lostdog@gmail.com', '流浪狗之家'),
-(27, '流浪狗之家', '男', '222', '2015-03-28 15:54:44', NULL, NULL, '222', 'lostdog@gmail.com', '流浪狗之家');
+INSERT INTO `board` (`boardid`, `boardname`, `boardsex`, `boardtag`, `label`, `boardsubject`, `boardtime`, `boardmail`, `boardweb`, `boardcontent`, `username`, `name`) VALUES
+(8, '動物之家', '女', '設計', NULL, '徵求設計系學生協助', '2014-06-15 16:10:08', '', '', '尋找設計系學生協助設計Lego', NULL, NULL),
+(13, '慈濟', '男', '設計', NULL, '尋找學生志工', '2014-06-17 23:43:50', '', '', '尋找免費的肝可以讓我們剝削', 'hayasi00', NULL),
+(14, '流放狗之家', '男', '設計', NULL, '尋找學生設計活動', '2014-06-17 23:46:14', '', '', '救救流浪狗的活動，舞台將選在西門町紅樓上', 'hayasi00', NULL),
+(15, '尋找老人看護志工', '男', '設計', NULL, '照護之家', '2014-06-17 23:46:36', '', '', '徵求有興趣照顧老人的學生', 'hayasi00', NULL),
+(16, '河東獅吼', '男', '行銷', NULL, '設計系學生，願意提供技能', '2014-06-17 23:47:35', '', '', '擅長設計，請各位聯繫，將可滿足需求', 'hayasi00', NULL),
+(19, '醫生無國界', '男', '設計', NULL, '重新規劃醫療無國界活動專案', '2014-06-19 23:44:43', '', '', '徵求設計系的學生參加', 'ellen', NULL),
+(20, '台北市政府', '女', '網站', NULL, '徵求海選民間委員', '2014-06-19 23:44:52', '', '', '協助尋找都更專家', 'ellen', NULL),
+(21, '流浪狗之家', '男', '行銷', NULL, '徵求學生志工', '2014-06-21 09:06:58', '', '', '希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗\r\n希望學生志工能夠一起來照顧流浪狗', 'ellen', NULL),
+(24, '', '男', '設計', NULL, '設計系學生協助廣宣品設計', '2014-12-24 00:36:51', '', '', '徵求設計系學生', 'hayasi00', '流浪狗之家'),
+(25, '章小八', '男', '行銷', NULL, '徵求品牌設計', '2015-05-23 21:56:01', NULL, NULL, '希望學生來一起設計品牌', 'kenny', '章小八'),
+(26, '章小八', '男', '設計', NULL, '希望一起開發慈善網站', '2015-05-23 21:57:31', NULL, NULL, '徵求前端網站設計濕', 'kenny', '章小八'),
+(27, '', '男', '網站', 'B', '徵求show girl一起玩11111', '2015-05-23 21:58:25', 'kenny', '', '徵求show girl', 'kenny', '章小八'),
+(28, '章小八', '男', '行銷', 'A', '徵求家族自我介紹', '2015-05-23 22:00:57', NULL, NULL, '徵求家族自我介紹', 'kenny', '章小八'),
+(34, '', '男', '設計', 'A,B', 'email test', '2015-05-24 00:12:24', 'kenny', '', 'email\r\n', 'kenny', '章小八'),
+(35, '喜憨兒之家', '男', '網站', NULL, '尋找志工義賣喜憨兒餅乾', '2015-05-30 11:21:15', '22222@gmail.com', NULL, '尋找大學生，好用人力幫忙義賣餅乾喔！！', '22222@gmail.com', '喜憨兒之家');
 
 -- --------------------------------------------------------
 
@@ -218,12 +224,10 @@ CREATE TABLE IF NOT EXISTS `memberdata` (
 
 INSERT INTO `memberdata` (`m_id`, `m_name`, `m_username`, `m_passwd`, `m_profilepic`, `m_sex`, `m_skill`, `m_birthday`, `m_level`, `m_status`, `m_url`, `m_phone`, `m_address`, `m_academic`, `m_description`, `m_login`, `m_logintime`, `m_jointime`) VALUES
 (1, '系統管理員', 'admin', '21232f297a57a5a743894a0e4a801fc3', NULL, '男', NULL, NULL, 'admin', 'student', NULL, NULL, NULL, NULL, NULL, 8, '2014-07-05 19:00:21', '2008-10-20 16:36:15'),
-(11, '王燕博', 'albert', '6c5bc43b443975b806740d8e41146479', NULL, '男', NULL, '1993-08-10', 'member', 'student', NULL, '0918976588', '台北市北環路2巷80號', NULL, NULL, 0, NULL, '2008-10-21 12:06:08'),
 (12, '林冠緯', 'hayasi00', 'eed3c0045d8beee0b7b5ccbf1b158f25', 'IMG_1850.JPG', '男', 'English', '1986-02-17', 'member', 'student', '', '0917553948', '888', NULL, NULL, 41, '2015-03-01 20:19:14', '2014-06-16 23:44:25'),
-(13, '林杰', 'ellen', 'e4707d45c7706fc4649ecac9ca08e698', NULL, '女', NULL, '1987-12-19', 'member', 'student', '', '', '', NULL, NULL, 4, '2014-06-21 08:30:30', '2014-06-17 23:13:35'),
-(15, '章小八', 'kenny', 'fde290ea8d375a112998beacd5f4cff5', '1957958_3943993854938_665275435_n.jpg', '男', 'CSS ', '1987-02-15', 'member', 'student', '', '', '', '', '', 45, '2015-03-28 15:36:44', '2014-07-05 19:13:39'),
+(15, '章小八', 'kenny', 'fde290ea8d375a112998beacd5f4cff5', '1957958_3943993854938_665275435_n.jpg', '男', 'CSS ', '1987-02-15', 'member', 'student', '', '', '', '', '', 59, '2015-06-13 10:58:46', '2014-07-05 19:13:39'),
 (18, '流浪狗之家', 'lostdog@gmail.com', '95e0af7778726c0f259fd9349ffb3b56', '流浪狗之家.jpg', '女', '', '1111-11-11', 'member', 'institute', '', '', '', '', '44444', 11, '2015-03-28 15:37:13', '2015-01-09 01:07:16'),
-(25, '喜憨兒之家', '22222@gmail.com', '3d2172418ce305c7d16d4b05597c6a59', '喜憨兒之家.jpg', '男', '', '1111-11-11', 'member', 'institute', NULL, '22222', '22222', '', '44444', 1, '2015-03-21 23:14:56', '2015-03-21 23:14:40');
+(25, '喜憨兒之家', '22222@gmail.com', '3d2172418ce305c7d16d4b05597c6a59', '喜憨兒之家.jpg', '男', '', '1111-11-11', 'member', 'institute', NULL, '22222', '22222', '', '44444', 2, '2015-05-30 11:20:34', '2015-03-21 23:14:40');
 
 --
 -- Indexes for dumped tables
@@ -277,7 +281,7 @@ MODIFY `ap_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=91;
 -- AUTO_INCREMENT for table `board`
 --
 ALTER TABLE `board`
-MODIFY `boardid` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+MODIFY `boardid` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `memberdata`
 --

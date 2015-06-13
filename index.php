@@ -198,7 +198,11 @@ $.getScript('//cdn.jsdelivr.net/isotope/1.5.25/jquery.isotope.min.js',function()
     <?php while($board_row_RecBoard=mysql_fetch_assoc($board_RecBoard)){ ?>
     
     
-    <?php include("singleProject.php"); ?>
+   <!-- Single Project-->
+   <?php include("singleProject.php");?>
+      
+      
+      <!-- Single Project--> 
     
     <?php } ?>
   </div>

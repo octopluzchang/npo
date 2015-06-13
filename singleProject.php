@@ -14,7 +14,17 @@
           
             <!-- Project Tags-->
              
-             <span class="label label-info">設計</span> <span class="label label-info">行銷</span> <span class="label label-info">網站</span> 
+             <span class="label label-info"><?php
+          if ($board_row_RecBoard["boardtag"] == 設計)  {
+            echo "設計";
+          }else if ($board_row_RecBoard["boardtag"] == "網站") {
+            echo "網站";
+          }else if ($board_row_RecBoard["boardtag"] == "行銷") {
+            echo "行銷";
+          }else{
+            echo "not all";
+          }
+        ?></span> 
              
           
             <div class="media">

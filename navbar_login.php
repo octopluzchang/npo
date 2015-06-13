@@ -19,7 +19,7 @@
 				</ul>
 			</div>
 		</div>
-		<form name="search" action="result.php" method="post" class="navbar-form navbar-left" role="search">
+		<form name="search" id="search" action="result.php" method="post" class="navbar-form navbar-left" role="search" onSubmit="return checkForm();" >
 			<div class="input-group">
 				<span class="input-group-addon" id="basic-addon2"> <span class="label label-info input">設計 <span class="glyphicon glyphicon-remove"></span></span> <span class="label label-info">行銷 <span class="glyphicon glyphicon-remove"></span></span> <span class="label label-info">網站 <span class="glyphicon glyphicon-remove"></span></span> </span><span class="input-group-addon" id="basic-addon2"> <a data-toggle="modal" data-target="#filterModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增條件</a> </span>
 				<input name="input" type="text" class="form-control" placeholder="請輸入專案名或張貼人" aria-describedby="basic-addon2">
