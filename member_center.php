@@ -73,6 +73,15 @@ $.getScript('//cdn.jsdelivr.net/isotope/1.5.25/jquery.isotope.min.js',function()
   
 });
 </script>
+<script language="javascript">
+    function checkForm() {
+        if (document.search.input.value == "") {
+          alert("請填寫搜尋欄!");
+          document.search.input.focus();
+          return false;
+        }
+    } 
+</script>
 <style>
 *, *:before, *:after {box-sizing:  border-box !important;}
 
