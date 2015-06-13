@@ -20,7 +20,7 @@ $board_RecBoard = mysql_query($board_query_limit_RecBoard);
 //以未加上限制顯示筆數的SQL敘述句查詢資料到 $all_RecBoard 中
 $board_row_RecBoard=mysql_fetch_assoc($board_RecBoard);
 
-//$projectName = "SELECT * FROM `board` WHERE `boardsubject` =". $boardId;
+
 ?>
 <!-- Project Modal -->
     

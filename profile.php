@@ -197,28 +197,11 @@ $result = mysql_query($sql_query);
 
 			<?php } ?>
 
-			
-
-
-
       		</li>
       		<li role="presentation" ><a href="#">正在進行的專案</a></li>
         	<li role="presentation" ><a href="#">追蹤中的專案</a></li>
  		</ul>		
-   		<div class="row">
-   		 	<div class="col-sm-6 col-md-4">
-<!-- Single Project-->
-
-		<?php include ("singleProject.php");?>
-
-<!-- Single Project-->
-
-<!-- Project Modal -->
-		
-		<?php include("modalProject.php");?>
-
-<!-- Filter Modal -->
-		<?php include("modalFilter.php");?>
+   		
 		
 <!-- modalEditprofile.php -->
         <!-- Project Modal -->

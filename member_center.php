@@ -162,10 +162,12 @@ $.getScript('//cdn.jsdelivr.net/isotope/1.5.25/jquery.isotope.min.js',function()
     <?php } ?>
   </div>
     
-    <?php include("modalProject.php"); ?>
     <?php include("modalFilter.php"); ?>
     <?php include("modalSignup.php"); ?>
     <?php include("modalSignin.php"); ?>
+
+    <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
     
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
