@@ -33,9 +33,10 @@ if (isset($_POST["action"]) && ($_POST["action"] == "add")) {
 
 	//驗證mysql_query資訊
 	//echo $query_insert;
-	echo $_SESSION["loginMember"];
+	//echo $_SESSION["loginMember"];
 	//重新導向回到主畫面
-	header("Location: member_center.php");
+	//header("Location: member_center.php");
+
 }
 ?>
 		<!-- board_post.php -->
