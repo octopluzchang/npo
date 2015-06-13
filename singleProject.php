@@ -1,9 +1,17 @@
+<script type="text/javascript">
+  function readDetail(dom){
+    var id = $(dom).attr('data-id');
+    $("#projectModal").load("modalProject.php?id=" + id, function(){
+      $("#projectModal").modal('show');
+    });
+  }
+</script>
 <!-- Single Project-->
       <div class="panel panel-default">
      
           <!-- Project Title-->
           <div class="panel-heading">
-          <a data-toggle="modal" data-target="#projectModal">
+          <a data-toggle="modal" onclick="readDetail(this)" data-id="<?php echo $board_row_RecBoard['boardid']; ?>">
             <h2><?php echo $board_row_RecBoard["boardsubject"]; ?></h2>
             
             </a>
