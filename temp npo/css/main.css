@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    background: #f3f3f3;
+}
+
+/*Navigation Bar*/
+.navigationBar {
+    width: 100%;
+    background-color:#999;
+    left: 0;
+    top: 0;
+    padding: 5px 0;
+    position: fixed;
+    float: left;
+    min-width: 1024px;
+}
+
+.navigationBar .left {
+    float: left;
+}
+
+
+
+
+
+.navigationBar .right {
+    float: right;
+    padding: 10px;
+}
+
+
+.logo {
+    width: 100px;
+    float: left;
+    color: #fff;
+    padding: 10px;
+    
+}
+
+.tagContainer {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.signUp, .signIn {
+    color: #fff;
+    float: inherit;
+    margin-left: 10px;
+}
+
+/*Project Pool*/
+
+.pool {
+    width: 1024px;
+    margin: 70px auto;
+    
+}
+
+.pool[data-columns]::before {
+	content: '3 .column.size-1of3';
+}
+
+.project {
+    width: 300px;
+    float: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    background-color: #fff;
+    margin: 0 10px 20px;
+    border-radius: 5px
+}
+
+
+.projectContent, .projectHeader, .projectFooter {
+    margin: 5px;
+}
+
+
+
+
+
+
+
+.projectHeader {
+    margin-bottom: 20px;
+}
+
+
+.projectImage {
+    height: 200px;
+    width: auto;
+    overflow: hidden;
+    background-color: #989898;
+}
+
+.projectInfo {
+    margin: 5px 0;
+    font-size: 13px
+}
+
+.userAvator {
+    width: 35px;
+    height: 35px;
+    background-color: #999;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.userName {
+    float: inherit;
+    vertical-align:text-bottom;
+    display: inline-block;
+    padding: 3px;
+}
+
+h3.projectName {
+}
+
+.projectFooter {
+    padding: 10px 0;
+}
+
+.projectContent {
+    padding: 10px 0;
+    border-bottom: 1px  solid #999;
+}
+
+.tag {
+    padding: 3px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin: 0 5px;
+    position: absolute;
+}
+
+
+
+.searchProject {
+    height: 40px;
+    width:200px;
+    font-size: 15px;
+    margin: 0 5px;
+}
+
+
+
+
+
+
+
+.popUpBack {
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.popUpHeader, .popUpContent, .popUpFooter {
+    margin: 10px;
+}
+
+.profileContainer {
+    width: 1024px;
+    margin: 70px auto 0;
+}
+
+.profilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #989898;
+    margin: 0 auto;
+}
+
+.profileAction {
+    float: right;
+}
+
+.poolSelecter li {
+    display: inline-block;
+}
+
+.projectTime:before {
+    content: '專案時間：';
+}
+
+.projectMemeber:before {
+    content: '專案人數：';
+}
+
+
+
+
+
+.actionContainer {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+}
+
+.actionContainer span {
+    padding: 20px 15px;
+    margin: 0 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+}
+
+.userContent {
+    display: inline-block;
+    padding: 10px;
+    vertical-align: text-bottom;
+    list-style: disc;
+    margin: 0 10px;
+}
+
+.comment {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #999;
+}
+
+.leaveComment textarea {
+    width: 100%;
+}
+
+.leaveComment button {
+ margin: 10px 0 30px;   
+}
+
+.commentTime {
+    font-size: 12px
+}
+
+.tagContainer li {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #999;
+}
