@@ -162,6 +162,15 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
 				return false;
 			}
     </script>
+    <script language="javascript">
+    function checkForm() {
+        if (document.search.input.value == "") {
+          alert("請填寫搜尋欄!");
+          document.search.input.focus();
+          return false;
+        }
+    } 
+</script>
 <title>NPO Lab</title>
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">

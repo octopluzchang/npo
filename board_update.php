@@ -90,6 +90,8 @@ $row_RecBoard = mysql_fetch_assoc($RecBoard);
 		</div>
 	</div>
 </div>
+</div>
+</div>
 			
 
 </body>
