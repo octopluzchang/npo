@@ -38,7 +38,7 @@ $board_row_RecBoard=mysql_fetch_assoc($board_RecBoard);
             <p> 專案日期：<?php echo $board_row_RecBoard["boardtime"];?> </p>
 
             <h3><?php echo $board_row_RecBoard["boardcontent"]; ?></h3>
-            
+          
             <p> 專案說明...BlablaBlablaBlablaBlabla...BlablaBlablaBlablaBlabla </p>
 >>>>>>> origin/master
           </div>

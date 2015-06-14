@@ -189,55 +189,17 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
     	<ul class="nav nav-tabs text-center">
       		<li role="presentation" class="active"><a href="#">自己張貼的專案</a>
 
-			<?php while ($row_result = mysql_fetch_assoc($result)) {?>
+<?php while($board_row_RecBoard=mysql_fetch_assoc($board_RecBoard)){ ?>
+		
+		
+		
+ 		<a href="board_update.php?id=<?php echo $board_row_RecBoard["boardid"]; ?>">[修改]</a>
 
-			<!-- Single Project-->
-			<div class="panel panel-default">
-			<a href="board_update.php?id=<?php echo $row_result["boardid"]; ?>">[修改]</a>&nbsp;<a href="board_del.php?id=<?php echo $board_row_RecBoard["boardid"]; ?>">[刪除]</a>
-
-			<!-- Project Title-->
-			<div class="panel-heading">
-
-			<a data-toggle="modal" data-target="#editPost">
-			
-				<h2><?php echo $row_result["boardsubject"]?></h2>
-			</a>
-
-
-			</a>
-			</div>
-			<div class="panel-body">
-			<!-- Project Status-->
-			<span aria-hidden="true" class="glyphicon glyphicon-user"></span><span aria-hidden="true" class="glyphicon glyphicon-time"></span><?php echo $row_result["boardtime"]
-			?>
-
-			<!-- Project Tags-->
-
-			 <span class="label label-info"><?php
-          if ($row_result["boardtag"] == 設計)  {
-            echo "設計";
-          }else if ($row_result["boardtag"] == "網站") {
-            echo "網站";
-          }else if ($row_result["boardtag"] == "行銷") {
-            echo "行銷";
-          }else{
-            echo "not all";
-          }
-        ?></span> 
-
-			<div class="media">
-			<div class="media-left"> <img data-src="holder.js/40x40/text:K" class="img-circle"><br> <?php echo $row_result["name"]; ?>
-			</div>
-			<div class="media-body"> <?php echo nl2br($row_result["boardcontent"]); ?>
-			</div>
-			</div>
-			</div>
-
-			</div>
-
-			<!-- Single Project-->
+			<?php include("modalEditPost.php"); ?>
 
 			<?php } ?>
+			<div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
 
       		</li>
       		<li role="presentation" ><a href="#">正在進行的專案</a></li>

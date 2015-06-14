@@ -29,8 +29,8 @@ if (isset($_POST["action"]) && ($_POST["action"] == "update")) {
 	$query_update .= "`boardcontent`='" . $_POST["boardcontent"] . "' ";
 	$query_update .= "WHERE `boardid`=" . $_POST["boardid"];
 	mysql_query($query_update);
-	//重新導向回到主畫面
-	header("Location: index.php");
+	//重新導向回到profile.php
+	header("Location: profile.php");
 }
 $query_RecBoard = "SELECT * FROM `board` WHERE `boardid`=" . $_GET["id"];
 $RecBoard = mysql_query($query_RecBoard);
@@ -38,27 +38,33 @@ $row_RecBoard = mysql_fetch_assoc($RecBoard);
 ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link href="style.css" rel="stylesheet" type="text/css">
-		<!-- Loading Bootstrap -->
-		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-		<!-- Loading Flat UI -->
-		<link href="css/flat-ui.css" rel="stylesheet">
-		<link rel="shortcut icon" href="images/favicon.ico">
-		<title>Crack the TERM</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script src="js/holder.js"></script>
+<script src="js/salvattore.js"></script>
+<title>NPO Lab</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 </head>
 <body>
-	
-<!--board start-->
-	<div class="wrapper">	
-  		<div class="main">
-  			<div class="content-title">
-  				塗鴉牆
-  				<hr>
-  				修改塗鴉牆
-  				<hr>
-  			</div>
-			<div class="formarea">
+<?php include ("navbar_login.php");?>
+
+<div class="container">
+<!-- Single Project-->
+			<div class="panel panel-default">
+
+			<!-- Project Title-->
+			<div class="panel-heading">
+  				
+			
 				<form name="form1" method="post" action="">          
 				<p>
 					標題
@@ -66,11 +72,13 @@ $row_RecBoard = mysql_fetch_assoc($RecBoard);
                 <p>
                 	<input name="boardsubject" type="text" id="boardsubject" class="span3" value="<?php echo $row_RecBoard["boardsubject"]; ?>">
 				</p>
+			</div>
+			<div class="panel-body">
                 <p>
                 	內容
                 </p>
               	<p>
-                  <textarea name="boardcontent" id="boardcontent" cols="8" rows="8" class="span3"><?php echo $row_RecBoard["boardcontent"]; ?></textarea>
+                  <textarea name="boardcontent" id="boardcontent" cols="50" rows="8" class="span3"><?php echo $row_RecBoard["boardcontent"]; ?></textarea>
                 </p>
                 <p>
                   <input name="boardid" type="hidden" id="boardid" value="<?php echo $row_RecBoard["boardid"]; ?>">
@@ -81,6 +89,7 @@ $row_RecBoard = mysql_fetch_assoc($RecBoard);
         	</form>
 		</div>
 	</div>
+</div>
 			
 
 </body>
