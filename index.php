@@ -78,147 +78,131 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="style.css" rel="stylesheet" type="text/css">
-<script src="js/holder.js"></script>
-<script>
-
-$.getScript('//cdn.jsdelivr.net/isotope/1.5.25/jquery.isotope.min.js',function(){
-
-  /* activate jquery isotope */
-  $('#posts').imagesLoaded( function(){
-    $('#posts').isotope({
-      itemSelector : '.item'
-    });
-  });
-  
-});
-</script>
-<script language="javascript">
-		function checkForm() {
-				if (document.search.input.value == "") {
-					alert("請填寫搜尋欄!");
-					document.search.input.focus();
-					return false;
-				}
-		}	
-</script>
-<style>
-*, *:before, *:after {box-sizing:  border-box !important;}
-
-
-.row {
- -moz-column-width: 25em;
- -webkit-column-width: 25em;
- -moz-column-gap: .5em;
- -webkit-column-gap: .5em; 
-  
-}
-
-.panel {
- display: inline-block;
- margin:  .5em;
- padding:  0; 
- width:98%;
-}
-
-/* Isotope Transitions
-------------------------------- */
-.isotope,
-.isotope .item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-}
-
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-      -ms-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
-
-.isotope .item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-      -ms-transition-property:     -ms-transform, opacity;
-       -o-transition-property:         top, left, opacity;
-          transition-property:         transform, opacity;
-}
-  
-  
-/* responsive media queries */
-
-@media (max-width: 992px) {
-  header h1 small {
-    display: block;
-  }
-
-  header div.description {
-    padding-top: 9px;
-    padding-bottom: 4px;
-  }
-
-  .isotope .item {
-    position: static ! important;
-    -webkit-transform: translate(0px, 0px) ! important;
-       -moz-transform: translate(0px, 0px) ! important;
-            transform: translate(0px, 0px) ! important;
-  }
-}
-
-</style>
-<title>NPO Lab</title>
-<!-- Bootstrap -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/holder.js"></script>
+		<script>
+		$.getScript('//cdn.jsdelivr.net/isotope/1.5.25/jquery.isotope.min.js',function(){
+		/* activate jquery isotope */
+		$('#posts').imagesLoaded( function(){
+		$('#posts').isotope({
+		itemSelector : '.item'
+		});
+		});
+		
+		});
+		</script>
+		<script language="javascript">
+				function checkForm() {
+						if (document.search.input.value == "") {
+							alert("請填寫搜尋欄!");
+							document.search.input.focus();
+							return false;
+						}
+					}
+		</script>
+		<style>
+		*, *:before, *:after {box-sizing:  border-box !important;}
+		.row {
+		-moz-column-width: 25em;
+		-webkit-column-width: 25em;
+		-moz-column-gap: .5em;
+		-webkit-column-gap: .5em;
+		
+		}
+		.panel {
+		display: inline-block;
+		margin:  .5em;
+		padding:  0;
+		width:98%;
+		}
+		/* Isotope Transitions
+		------------------------------- */
+		.isotope,
+		.isotope .item {
+		-webkit-transition-duration: 0.8s;
+		-moz-transition-duration: 0.8s;
+		-ms-transition-duration: 0.8s;
+		-o-transition-duration: 0.8s;
+		transition-duration: 0.8s;
+		}
+		.isotope {
+		-webkit-transition-property: height, width;
+		-moz-transition-property: height, width;
+		-ms-transition-property: height, width;
+		-o-transition-property: height, width;
+		transition-property: height, width;
+		}
+		.isotope .item {
+		-webkit-transition-property: -webkit-transform, opacity;
+		-moz-transition-property:    -moz-transform, opacity;
+		-ms-transition-property:     -ms-transform, opacity;
+		-o-transition-property:         top, left, opacity;
+		transition-property:         transform, opacity;
+		}
+		
+		
+		/* responsive media queries */
+		@media (max-width: 992px) {
+		header h1 small {
+		display: block;
+		}
+		header div.description {
+		padding-top: 9px;
+		padding-bottom: 4px;
+		}
+		.isotope .item {
+		position: static ! important;
+		-webkit-transform: translate(0px, 0px) ! important;
+		-moz-transform: translate(0px, 0px) ! important;
+		transform: translate(0px, 0px) ! important;
+		}
+		}
+		</style>
+		<title>NPO Lab</title>
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-</head>
-<body>
+	</head>
+	<body>
+		<?php include("navbar.php");?>
+		<div class="container">
+			<?php if(isset($_GET["errMsg"]) && ($_GET["errMsg"]=="1")){?>
+			<div class="errDiv">
+				<h3 align="center"><font color="red">登入帳號或密碼錯誤！</font></h3>
+			</div>
+			<?php } ?>
+			<!--<p>資料筆數：<?php echo $board_total_records; ?></p>-->
+			<div class="row">
+				<?php while($board_row_RecBoard=mysql_fetch_assoc($board_RecBoard)){ ?>
+					<!-- Single Project-->
+					<?php include("singleProject.php");?>
+					<!-- Single Project-->
+				<?php } ?>
+			</div>
+			<?php include("modalFilter.php"); ?>
+			<?php include("modalSignup.php"); ?>
+			<?php include("modalSignin.php"); ?>
+			<div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			</div>
+		</div>
+		
+		<?php include("chat.php"); ?>
+		
 
-<?php include("navbar.php");?>
-<div class="container">
-	<?php if(isset($_GET["errMsg"]) && ($_GET["errMsg"]=="1")){?>
-<div class="errDiv">
-<h3 align="center"><font color="red">登入帳號或密碼錯誤！</font></h3>
-</div>
-<?php } ?>
-  <!--<p>資料筆數：<?php echo $board_total_records; ?></p>-->
-  <div class="row">
-    <?php while($board_row_RecBoard=mysql_fetch_assoc($board_RecBoard)){ ?>
-    
-    
-   <!-- Single Project-->
-   <?php include("singleProject.php");?>
-      
-      
-      <!-- Single Project--> 
-    
-    <?php } ?>
-  </div>
-
-    <?php include("modalFilter.php"); ?>
-    <?php include("modalSignup.php"); ?>
-    <?php include("modalSignin.php"); ?>
-    <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    </div>
-</div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="js/bootstrap.min.js"></script>
-
-    
-
-</body>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		
+	</body>
 </html>

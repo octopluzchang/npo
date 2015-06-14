@@ -5,8 +5,9 @@ require_once ("connMysql.php");
 session_start();
 //檢查是否經過登入
 if (!isset($_SESSION["loginMember"]) || ($_SESSION["loginMember"] == "")) {
-	header("Location: index.php");
+  header("Location: index.php");
 }
+
 //執行登出動作
 if (isset($_GET["logout"]) && ($_GET["logout"] == "true")) {
 	unset($_SESSION["loginMember"]);
@@ -29,7 +30,11 @@ if (isset($_GET['page'])) {
 //本頁開始記錄筆數 = (頁數-1)*每頁記錄筆數
 $board_startRow_records = ($board_num_pages - 1) * $board_pageRow_records;
 //未加限制顯示筆數的SQL敘述句
-$board_query_RecBoard = "SELECT * FROM `board` ORDER BY `boardtime` DESC";
+$board_query_RecBoard = "
+  SELECT * FROM `board`
+  LEFT JOIN `memberdata` on `board`.`boardname` = `m_name`
+  ORDER BY `boardtime` DESC
+";
 //加上限制顯示筆數的SQL敘述句，由本頁開始記錄筆數開始，每頁顯示預設筆數
 $board_query_limit_RecBoard = $board_query_RecBoard . " LIMIT " . $board_startRow_records . ", " . $board_pageRow_records;
 //以加上限制顯示筆數的SQL敘述句查詢資料到 $RecBoard 中
@@ -48,6 +53,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="style.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/holder.js"></script>
 <script src="js/salvattore.js"></script>
 <title>NPO Lab</title>
@@ -168,6 +174,7 @@ $.getScript('//cdn.jsdelivr.net/isotope/1.5.25/jquery.isotope.min.js',function()
 
     <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     </div>
+    <?php include("chat.php"); ?>
     
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
