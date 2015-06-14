@@ -40,7 +40,7 @@ $board_row_RecBoard=mysql_fetch_assoc($board_RecBoard);
             <h3><?php echo $board_row_RecBoard["boardcontent"]; ?></h3>
           
             <p> 專案說明...BlablaBlablaBlablaBlabla...BlablaBlablaBlablaBlabla </p>
->>>>>>> origin/master
+
           </div>
           <div class="modal-footer">
             <div class="media">
