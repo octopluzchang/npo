@@ -30,6 +30,7 @@
 			<input name="retype" class="btn btn-info" type="reset" value="重設" />
 		</form>
 		<div id="userStatus">
+			
 			<?php
 			include ("user.php");
 			?>
