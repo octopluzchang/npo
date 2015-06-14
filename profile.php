@@ -67,7 +67,33 @@ $row_RecMember = mysql_fetch_assoc($RecMember);
 $sql_query = " SELECT * FROM board WHERE username='" . $_SESSION["loginMember"] . "'";
 //echo $sql_query;
 $result = mysql_query($sql_query);
+
+//預設每頁筆數
+$board_pageRow_records = 5;
+//預設頁數
+$board_num_pages = 1;
+//若已經有翻頁，將頁數更新
+if (isset($_GET['page'])) {
+	$board_num_pages = $_GET['page'];
+}
+//本頁開始記錄筆數 = (頁數-1)*每頁記錄筆數
+$board_startRow_records = ($board_num_pages - 1) * $board_pageRow_records;
+//未加限制顯示筆數的SQL敘述句
+$board_query_RecBoard = "SELECT * FROM `board` WHERE username ='" . $_SESSION["loginMember"] . "' ORDER BY `boardtime` DESC";
+//加上限制顯示筆數的SQL敘述句，由本頁開始記錄筆數開始，每頁顯示預設筆數
+$board_query_limit_RecBoard = $board_query_RecBoard . " LIMIT " . $board_startRow_records . ", " . $board_pageRow_records;
+//以加上限制顯示筆數的SQL敘述句查詢資料到 $RecBoard 中
+$board_RecBoard = mysql_query($board_query_limit_RecBoard);
+//以未加上限制顯示筆數的SQL敘述句查詢資料到 $all_RecBoard 中
+$board_all_RecBoard = mysql_query($board_query_RecBoard);
+//計算總筆數
+$board_total_records = mysql_num_rows($board_all_RecBoard);
+//計算總頁數=(總筆數/每頁筆數)後無條件進位。
+$board_total_pages = ceil($board_total_records / $board_pageRow_records);
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -158,7 +184,8 @@ $result = mysql_query($sql_query);
                      <button class="btn btn-default pull-right" type="submit" data-toggle="modal" data-target="#editprofileModal">編輯個人檔案</button>
                     </div>
     	</div>
- 
+
+<!--自己張貼的專宴的修改及刪除-->
     	<ul class="nav nav-tabs text-center">
       		<li role="presentation" class="active"><a href="#">自己張貼的專案</a>
 
@@ -166,12 +193,17 @@ $result = mysql_query($sql_query);
 
 			<!-- Single Project-->
 			<div class="panel panel-default">
+			<a href="board_update.php?id=<?php echo $row_result["boardid"]; ?>">[修改]</a>&nbsp;<a href="board_del.php?id=<?php echo $board_row_RecBoard["boardid"]; ?>">[刪除]</a>
 
 			<!-- Project Title-->
 			<div class="panel-heading">
-			<a data-toggle="modal" data-target="#projectModal">
-			<h2><?php echo $row_result["boardsubject"]?>
-			</h2>
+
+			<a data-toggle="modal" data-target="#editPost">
+			
+				<h2><?php echo $row_result["boardsubject"]?></h2>
+			</a>
+
+
 			</a>
 			</div>
 			<div class="panel-body">
@@ -181,7 +213,17 @@ $result = mysql_query($sql_query);
 
 			<!-- Project Tags-->
 
-			<span class="label label-info">設計</span> <span class="label label-info">行銷</span> <span class="label label-info">網站</span>
+			 <span class="label label-info"><?php
+          if ($row_result["boardtag"] == 設計)  {
+            echo "設計";
+          }else if ($row_result["boardtag"] == "網站") {
+            echo "網站";
+          }else if ($row_result["boardtag"] == "行銷") {
+            echo "行銷";
+          }else{
+            echo "not all";
+          }
+        ?></span> 
 
 			<div class="media">
 			<div class="media-left"> <img data-src="holder.js/40x40/text:K" class="img-circle"><br> <?php echo $row_result["name"]; ?>
@@ -200,7 +242,51 @@ $result = mysql_query($sql_query);
       		</li>
       		<li role="presentation" ><a href="#">正在進行的專案</a></li>
         	<li role="presentation" ><a href="#">追蹤中的專案</a></li>
- 		</ul>		
+ 		</ul>
+
+
+ 		<!-- modalEditprofile.php -->
+        <!-- Project Modal -->
+<div class="modal fade" id="editPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+
+<div class="content-title">
+  				自己張貼的專案
+  				<hr>
+  			</div>
+			<div class="formarea">
+				<form name="form1" method="post" action="">          
+				<p>
+					標題
+                </p>
+                <p>
+                	<input name="boardsubject" type="text" id="boardsubject" class="span3" value="<?php echo $result["boardsubject"]; ?>">
+				</p>
+                <p>
+                	內容
+                </p>
+              	<p>
+                  <textarea name="boardcontent" id="boardcontent" cols="8" rows="8" class="span3"><?php echo $result["boardcontent"]; ?></textarea>
+                </p>
+                <p>
+                  <input name="boardid" type="hidden" id="boardid" value="<?php echo $result["boardid"]; ?>">
+                  <input name="action" type="hidden" id="action" value="update">
+                  <input type="submit" name="button" id="button" value="更新資料">
+                  <input type="button" name="button3" id="button3" value="回上一頁" onClick="window.history.back();">
+                </p>
+        	</form>
+		</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>
    		
 		
 <!-- modalEditprofile.php -->
