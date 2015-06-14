@@ -8,7 +8,9 @@ function readDetail(dom){
 </script>
 <!-- Single Project-->
 <div class="panel panel-default">
-  
+
+  <img src="images/<?php echo $board_row_RecBoard["boardImg"]; ?>" alt="boardImg" class="img-thumbnail" />
+
   <!-- Project Title-->
   <div class="panel-heading">
     <a data-toggle="modal" onclick="readDetail(this)" data-id="<?php echo $board_row_RecBoard['boardid']; ?>">

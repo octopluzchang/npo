@@ -54,7 +54,7 @@ if (isset($_POST["username"]) && isset($_POST["passwd"])) {
 <?php
 //專案資料取出開始
 //預設每頁筆數
-$board_pageRow_records = 10;
+$board_pageRow_records = 20;
 //預設頁數
 $board_num_pages = 1;
 //若已經有翻頁，將頁數更新
