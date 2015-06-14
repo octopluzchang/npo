@@ -1,324 +1,312 @@
 <html>
-
-<head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <script type="text/javascript" src="js/main_functions.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/salvattore.js"></script>
-    <script type="text/javascript" src="js/dynamicgrid.js"></script>
-</head>
-
-<body>
-    <div class="navigationBar">
-        <span class="left">
-            <span class="logo">
-                NPO Lab
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <link rel="stylesheet" href="css/search.css" type="text/css">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+        <script type="text/javascript" src="js/main_functions.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/salvattore.js"></script>
+        <script type="text/javascript" src="js/dynamicgrid.js"></script>
+        <script type="text/javascript" src="js/search.js"></script>
+    </head>
+    <body>
+        <div class="navigationBar">
+            <span class="left">
+                <span class="logo">
+                    NPO Lab
+                </span>
             </span>
-        <span class="searchBar">
+            <span class="searchBar">
+                <div class="searchBorder">
+                    <input class="searchInput" type="text" placeholder="Search">
+                    <i class="searchIcon fa fa-search"></i>
+                </div>
+                <div class="dropdownTagList">
+                    <ul>
+                    </ul>
+                </div>
+            </span>
+            <span class="right">
+                <span class="signIn">登入</span>
+                <span class="signUp">加入公益實驗室</span>
+            </span>
+        </div>
+        <div class="pool" data-columns>
+            <div class="project" data-toggle="modal" data-target=".singleProject">
                 
-            </span>
-
-        </span>
-        <span class="right">
-             <span class="signIn">登入</span>
-        <span class="signUp">加入公益實驗室</span>
-
-        </span>
-    </div>
-
-    <div class="pool" data-columns>
-        <div class="project" data-toggle="modal" data-target=".singleProject">
-            
-            <div class="projectImage"></div>
-            
-            <div class="projectHeader">
-                <h3 class="projectName">專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱</h3>
-                <ul class="tagContainer">
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤標籤標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                </ul>
-                <div class="projectInfo">
-                    <div class="tagContainer"></div>
-                    <div class="projectTime">2015/06/27~2015/06/30</div>
-                    <div class="projectMemeber">10/20</div>
-                </div>
-            </div>
-            
-            <div class="projectFooter">
-                <span class="userAvator"></span>
-                <span class="userName">專案發起者名稱</span>
-            </div>
-        </div>
-
-    
-        <div class="project" data-toggle="modal" data-target=".singleProject">
-            
-            <div class="projectImage"></div>
-            
-            <div class="projectHeader">
-                <h3 class="projectName">專案名稱專案名稱專案名稱名稱專案名稱</h3>
-                <ul class="tagContainer">
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤標籤標籤</li>
-                    
-                    <li>標籤</li>
-                </ul>
-                <div class="projectInfo">
-                    <div class="tagContainer"></div>
-                    <div class="projectTime">2015/06/27~2015/06/30</div>
-                    <div class="projectMemeber">10/20</div>
-                </div>
-            </div>
-            
-            <div class="projectFooter">
-                <span class="userAvator"></span>
-                <span class="userName">專案發起者名稱</span>
-            </div>
-        </div>
-        
-        
-        
-        <div class="project" data-toggle="modal" data-target=".singleProject">
-            
-            <div class="projectImage"></div>
-            
-            <div class="projectHeader">
-                <h3 class="projectName">專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名案名稱</h3>
-                <ul class="tagContainer">
-                    
-                    <li>標籤</li>
-                    <li>標籤</li>
-                </ul>
-                <div class="projectInfo">
-                    <div class="tagContainer"></div>
-                    <div class="projectTime">2015/06/27~2015/06/30</div>
-                    <div class="projectMemeber">10/20</div>
-                </div>
-            </div>
-            
-            <div class="projectFooter">
-                <span class="userAvator"></span>
-                <span class="userName">專案發起者名稱</span>
-            </div>
-        </div>
-        
-        
-        
-        <div class="project" data-toggle="modal" data-target=".singleProject">
-            
-            <div class="projectImage"></div>
-            
-            <div class="projectHeader">
-                <h3 class="projectName">專案專案名稱</h3>
-                <ul class="tagContainer">
-                    <li>標籤</li>
-                    
-                    <li>標籤標籤標籤標籤標籤標籤</li>
-                    <li>標籤</li>
-                </ul>
-                <div class="projectInfo">
-                    <div class="tagContainer"></div>
-                    <div class="projectTime">2015/06/27~2015/06/30</div>
-                    <div class="projectMemeber">10/20</div>
-                </div>
-            </div>
-            
-            <div class="projectFooter">
-                <span class="userAvator"></span>
-                <span class="userName">專案發起者名稱</span>
-            </div>
-        </div>
-        
-        
-        
-        
-        <div class="project" data-toggle="modal" data-target=".singleProject">
-            
-            <div class="projectImage"></div>
-            
-            <div class="projectHeader">
-                <h3 class="projectName">專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專稱專案名稱</h3>
-                <ul class="tagContainer">
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤標籤標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                </ul>
-                <div class="projectInfo">
-                    <div class="tagContainer"></div>
-                    <div class="projectTime">2015/06/27~2015/06/30</div>
-                    <div class="projectMemeber">10/20</div>
-                </div>
-            </div>
-            
-            <div class="projectFooter">
-                <span class="userAvator"></span>
-                <span class="userName">專案發起者名稱</span>
-            </div>
-        </div>
-        
-        
-        
-        <div class="project" data-toggle="modal" data-target=".singleProject">
-            
-            <div class="projectImage"></div>
-            
-            <div class="projectHeader">
-                <h3 class="projectName">專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專名稱</h3>
-                <ul class="tagContainer">
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤標籤標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                </ul>
-                <div class="projectInfo">
-                    <div class="tagContainer"></div>
-                    <div class="projectTime">2015/06/27~2015/06/30</div>
-                    <div class="projectMemeber">10/20</div>
-                </div>
-            </div>
-            
-            <div class="projectFooter">
-                <span class="userAvator"></span>
-                <span class="userName">專案發起者名稱</span>
-            </div>
-        </div>
-        
-        
-        
-        <div class="project" data-toggle="modal" data-target=".singleProject">
-            
-            <div class="projectImage"></div>
-            
-            <div class="projectHeader">
-                <h3 class="projectName">專案名稱專案</h3>
-                <ul class="tagContainer">
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤標籤標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                </ul>
-                <div class="projectInfo">
-                    <div class="tagContainer"></div>
-                    <div class="projectTime">2015/06/27~2015/06/30</div>
-                    <div class="projectMemeber">10/20</div>
-                </div>
-            </div>
-            
-            <div class="projectFooter">
-                <span class="userAvator"></span>
-                <span class="userName">專案發起者名稱</span>
-            </div>
-        </div>
-    
-    
-    
-
-    <div class="singleProject modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="projectImage">
-                </div>
-                <div class="popUpHeader">
-                    <div class="actionContainer">
-                        <span>參加</span>
-                        <span>追蹤</span>
-                        <span data-dismiss="modal">關閉</span>
-                    </div>
-                    <h3 class="projectName">專案名稱</h3>
+                <div class="projectImage"></div>
+                
+                <div class="projectHeader">
+                    <h3 class="projectName">專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱</h3>
                     <ul class="tagContainer">
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤標籤標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                    <li>標籤</li>
-                </ul>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤標籤標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                    </ul>
                     <div class="projectInfo">
                         <div class="tagContainer"></div>
                         <div class="projectTime">2015/06/27~2015/06/30</div>
                         <div class="projectMemeber">10/20</div>
                     </div>
-                    
-                    
                 </div>
-
-                <div class="popUpContent">
-                    <div class="projectContent">
-                        <p>專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述</p>
-                    </div>
-                </div>
-                <div class="popUpFooter">
-                    <h3>留言</h3>
-                    <div class="leaveComment">
-                            
-                        <textarea></textarea>
-                            <button>送出留言</button>
-                        </div>
-                    
-                    <div class="commentContainer">
-                        
-                        <div class="comment">
-                            <span class="userAvator"></span>
-                            <div class="userName">使用者名稱<span class="commentTime"><br>1小時前</span></div>
-                            
-                            <div class="userContent">留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內</div>
-                            
-                        </div>
-                        
-                        <div class="comment">
-                            <span class="userAvator"></span>
-                            <div class="userName">使用者名稱<span class="commentTime"><br>2小時前</span></div><div class="userContent">留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內</div>
-                            
-                        </div>
-                        
-                        
-                        
-                    </div>
-                    
-
+                
+                <div class="projectFooter">
+                    <span class="userAvator"></span>
+                    <span class="userName">專案發起者名稱</span>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-
-
-
-
-        
-        
-        
-
-
-
-
-
-</body>
-
-</html>
+            
+            <div class="project" data-toggle="modal" data-target=".singleProject">
+                
+                <div class="projectImage"></div>
+                
+                <div class="projectHeader">
+                    <h3 class="projectName">專案名稱專案名稱專案名稱名稱專案名稱</h3>
+                    <ul class="tagContainer">
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤標籤標籤</li>
+                        
+                        <li>標籤</li>
+                    </ul>
+                    <div class="projectInfo">
+                        <div class="tagContainer"></div>
+                        <div class="projectTime">2015/06/27~2015/06/30</div>
+                        <div class="projectMemeber">10/20</div>
+                    </div>
+                </div>
+                
+                <div class="projectFooter">
+                    <span class="userAvator"></span>
+                    <span class="userName">專案發起者名稱</span>
+                </div>
+            </div>
+            
+            
+            
+            <div class="project" data-toggle="modal" data-target=".singleProject">
+                
+                <div class="projectImage"></div>
+                
+                <div class="projectHeader">
+                    <h3 class="projectName">專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名案名稱</h3>
+                    <ul class="tagContainer">
+                        
+                        <li>標籤</li>
+                        <li>標籤</li>
+                    </ul>
+                    <div class="projectInfo">
+                        <div class="tagContainer"></div>
+                        <div class="projectTime">2015/06/27~2015/06/30</div>
+                        <div class="projectMemeber">10/20</div>
+                    </div>
+                </div>
+                
+                <div class="projectFooter">
+                    <span class="userAvator"></span>
+                    <span class="userName">專案發起者名稱</span>
+                </div>
+            </div>
+            
+            
+            
+            <div class="project" data-toggle="modal" data-target=".singleProject">
+                
+                <div class="projectImage"></div>
+                
+                <div class="projectHeader">
+                    <h3 class="projectName">專案專案名稱</h3>
+                    <ul class="tagContainer">
+                        <li>標籤</li>
+                        
+                        <li>標籤標籤標籤標籤標籤標籤</li>
+                        <li>標籤</li>
+                    </ul>
+                    <div class="projectInfo">
+                        <div class="tagContainer"></div>
+                        <div class="projectTime">2015/06/27~2015/06/30</div>
+                        <div class="projectMemeber">10/20</div>
+                    </div>
+                </div>
+                
+                <div class="projectFooter">
+                    <span class="userAvator"></span>
+                    <span class="userName">專案發起者名稱</span>
+                </div>
+            </div>
+            
+            
+            
+            
+            <div class="project" data-toggle="modal" data-target=".singleProject">
+                
+                <div class="projectImage"></div>
+                
+                <div class="projectHeader">
+                    <h3 class="projectName">專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專稱專案名稱</h3>
+                    <ul class="tagContainer">
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤標籤標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                    </ul>
+                    <div class="projectInfo">
+                        <div class="tagContainer"></div>
+                        <div class="projectTime">2015/06/27~2015/06/30</div>
+                        <div class="projectMemeber">10/20</div>
+                    </div>
+                </div>
+                
+                <div class="projectFooter">
+                    <span class="userAvator"></span>
+                    <span class="userName">專案發起者名稱</span>
+                </div>
+            </div>
+            
+            
+            
+            <div class="project" data-toggle="modal" data-target=".singleProject">
+                
+                <div class="projectImage"></div>
+                
+                <div class="projectHeader">
+                    <h3 class="projectName">專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專案名稱專名稱</h3>
+                    <ul class="tagContainer">
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤標籤標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                    </ul>
+                    <div class="projectInfo">
+                        <div class="tagContainer"></div>
+                        <div class="projectTime">2015/06/27~2015/06/30</div>
+                        <div class="projectMemeber">10/20</div>
+                    </div>
+                </div>
+                
+                <div class="projectFooter">
+                    <span class="userAvator"></span>
+                    <span class="userName">專案發起者名稱</span>
+                </div>
+            </div>
+            
+            
+            
+            <div class="project" data-toggle="modal" data-target=".singleProject">
+                
+                <div class="projectImage"></div>
+                
+                <div class="projectHeader">
+                    <h3 class="projectName">專案名稱專案</h3>
+                    <ul class="tagContainer">
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤標籤標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                    </ul>
+                    <div class="projectInfo">
+                        <div class="tagContainer"></div>
+                        <div class="projectTime">2015/06/27~2015/06/30</div>
+                        <div class="projectMemeber">10/20</div>
+                    </div>
+                </div>
+                
+                <div class="projectFooter">
+                    <span class="userAvator"></span>
+                    <span class="userName">專案發起者名稱</span>
+                </div>
+            </div>
+            
+            
+            
+            <div class="singleProject modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="projectImage">
+                        </div>
+                        <div class="popUpHeader">
+                            <div class="actionContainer">
+                                <span>參加</span>
+                                <span>追蹤</span>
+                                <span data-dismiss="modal">關閉</span>
+                            </div>
+                            <h3 class="projectName">專案名稱</h3>
+                            <ul class="tagContainer">
+                                <li>標籤</li>
+                                <li>標籤</li>
+                                <li>標籤</li>
+                                <li>標籤標籤標籤</li>
+                                <li>標籤</li>
+                                <li>標籤</li>
+                                <li>標籤</li>
+                                <li>標籤</li>
+                            </ul>
+                            <div class="projectInfo">
+                                <div class="tagContainer"></div>
+                                <div class="projectTime">2015/06/27~2015/06/30</div>
+                                <div class="projectMemeber">10/20</div>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="popUpContent">
+                            <div class="projectContent">
+                                <p>專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述</p>
+                            </div>
+                        </div>
+                        <div class="popUpFooter">
+                            <h3>留言</h3>
+                            <div class="leaveComment">
+                                
+                                <textarea></textarea>
+                                <button>送出留言</button>
+                            </div>
+                            
+                            <div class="commentContainer">
+                                
+                                <div class="comment">
+                                    <span class="userAvator"></span>
+                                    <div class="userName">使用者名稱<span class="commentTime"><br>1小時前</span></div>
+                                    
+                                    <div class="userContent">留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內</div>
+                                    
+                                </div>
+                                
+                                <div class="comment">
+                                    <span class="userAvator"></span>
+                                    <div class="userName">使用者名稱<span class="commentTime"><br>2小時前</span></div><div class="userContent">留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內</div>
+                                    
+                                </div>
+                                
+                                
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+        </body>
+    </html>
