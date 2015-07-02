@@ -2960,11 +2960,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 5, ../sass/search.scss */
 .searchBar {
   float: left;
-  width: 80%;
-  height: 40px;
+  width: 600px;
   line-height: 40px;
   position: relative;
-  background-color: #999999;
 }
 /* line 12, ../sass/search.scss */
 .searchBar .dropdownTagList {
@@ -3003,9 +3001,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 43, ../sass/search.scss */
 .searchBar .searchBorder {
-  width: 100%;
+  width: 600px;
   height: 36px;
-  border: 2px solid #2C3E40;
+    background-color: #fff;
   border-radius: 6px;
   transition: linear .2s all;
   position: relative;
@@ -3027,7 +3025,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   float: left;
   padding: 2px 12px;
   width: 90%;
-  height: 26px;
+  height: 30px;
   border: 0px;
   outline: none;
   line-height: 26px;
@@ -3035,7 +3033,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #222;
   border-radius: 6px;
   margin: 3px;
-  background-color: #999999;
 }
 /* line 75, ../sass/search.scss */
 .searchBar .searchBorder .tag {
@@ -3044,7 +3041,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   overflow: hidden;
   height: 26px;
   line-height: 26px;
-  padding: 2px 12px;
+  padding: 0 12px;
   font-size: 18px;
   border-radius: 4px;
   color: #FFF;

@@ -133,6 +133,7 @@ $(function() {
         }
         isFocus = true;
     });
+    
     $searchInput.focusout(function() {
         isFocus = false;
         if (!isOpenAutoList) {
