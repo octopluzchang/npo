@@ -1,3 +1,119 @@
+$(document).ready(function(){
+    
+//Search Bar behaviour
+    $('#searchBar input[type="submit"]').mouseenter(function(){
+        $('input[name="searchBarInput"]').removeClass('hidden');
+    });
+    $('input[name="searchBarInput"]').mouseleave(function(){
+        if($(this).val().length ==0){
+            $('input[name="searchBarInput"]').addClass('hidden');
+        }
+        
+    });
+    
+//New Project Toogle
+    $('#newProject').hover(function(){
+        $('#newProject span').toggle();
+    });
+    
+// Action Container
+    $('.actionContainer input').click(function(){
+        $(this).addClass('selected');
+    });
+    
+    
+//Tab Selector
+    $('.tab li').click(function(){
+        $('.tab li').removeClass('selected');
+        $(this).addClass('selected');
+        //Tab can show different project status
+         if($(this).val() === 1){
+            $('.project').hide();
+             $('.project.active').show();
+         } else {
+         $('.project').hide();
+         }
+    });
+
+    
+    
+//No Projects in the pool
+
+    
+    
+//Activate Jquery UI Plugins
+    //Date Picker
+    
+    //$('input[name="newProjectDate"]').datepicker();
+    
+//Textarea Auto Grow
+    $('textarea').autogrow();
+    
+//Login Panel Control
+    $('.navigationBar .right, #loginPanel').mouseenter(function(){
+        $('#loginPanel').slideDown();
+    });
+    
+    $(' #loginPanel').mouseleave(function(){
+        $('#loginPanel').slideUp();
+    });
+    
+    
+/*//Randomly adding projects
+    var e = $('.project');
+    //Set Project number
+    for (var i = 0; i<100;i++) {
+    e.clone().insertAfter(e);
+    }
+    
+    //Random Images
+    var images = ['images/projectImagePlaceholder_1.jpg', 'images/projectImagePlaceholder_2.jpg', 'images/projectImagePlaceholder_3.jpg'];
+    $('.projectImage img').each(function(){ 
+    $(this).attr('src', images[Math.floor(Math.random() * images.length)]);
+    });
+    
+    //Random Titles
+    var titles = ['徵求學生設計Logo', '慈善晚會設計規劃流程', '社會設計實踐與分析研究計畫', '企劃專題講座與整合行銷之實踐'];
+    $('.projectName').each(function(){ 
+    $(this).html(titles[Math.floor(Math.random() * images.length)]);
+    });*/
+    
+    //Random Numbers of tags
+    /*var tags = $('.projectHeader .tagContainer li');
+    for (var i = 0; i< Math.random();i++) {
+    tags.clone().insertAfter(tags);
+    }*/
+    
+    
+//Blurry Filter on popup shows
+    //Show Trigger Plugin
+    
+$('.modal').on('show.bs.modal', function (e) {
+  $('.pool, #profile, .navigationBar').addClass('blur')
+});
+    $('.modal').on('hide.bs.modal', function (e) {
+  $('.pool, #profile, .navigationBar').removeClass('blur')
+});
+});
+
+
+//Navigation Bar Shrink on scroll
+$(window).scroll(function() {
+    var windscroll = $(window).scrollTop();
+    if (windscroll >= 195) {
+        $('.tab, #profile .userAvator, #profile .userName').addClass('fixed');
+    } else {
+        $('.tab, #profile .userAvator, #profile .userName').removeClass('fixed'); 
+    }
+
+}).scroll();
+
+
+
+
+
+//////Plugin Scripts
+
 //Fix Project images overlapping
 jQuery(window).on('load', function(){
 var $container = $('.pool');
@@ -84,78 +200,3 @@ $container.imagesLoaded( function() {
         });
     };
 })(jQuery);
-
-$(document).ready(function(){
-//Tab Selector
-    $('.tab li').click(function(){
-        $('.tab li').removeClass('selected');
-        $(this).addClass('selected');
-    });
-
-    
-//Jquery UI Plugins
-    //Date Picker
-    
-    $('input[name="newProjectDate"]').datepicker();
-    
-//Textarea Auto Grow
-    $('textarea').autogrow();
-    
-//Login Panel Control
-    $('.navigationBar .right, #loginPanel').mouseenter(function(){
-        $('#loginPanel').slideDown();
-    });
-    
-    $(' #loginPanel').mouseleave(function(){
-        $('#loginPanel').slideUp();
-    });
-    
-/*//Randomly adding projects
-    var e = $('.project');
-    //Set Project number
-    for (var i = 0; i<100;i++) {
-    e.clone().insertAfter(e);
-    }
-    
-    //Random Images
-    var images = ['images/projectImagePlaceholder_1.jpg', 'images/projectImagePlaceholder_2.jpg', 'images/projectImagePlaceholder_3.jpg'];
-    $('.projectImage img').each(function(){ 
-    $(this).attr('src', images[Math.floor(Math.random() * images.length)]);
-    });
-    
-    //Random Titles
-    var titles = ['徵求學生設計Logo', '慈善晚會設計規劃流程', '社會設計實踐與分析研究計畫', '企劃專題講座與整合行銷之實踐'];
-    $('.projectName').each(function(){ 
-    $(this).html(titles[Math.floor(Math.random() * images.length)]);
-    });*/
-    
-    //Random Numbers of tags
-    /*var tags = $('.projectHeader .tagContainer li');
-    for (var i = 0; i< Math.random();i++) {
-    tags.clone().insertAfter(tags);
-    }*/
-    
-    
-//Blurry Filter on popup shows
-    //Show Trigger Plugin
-    
-$('.modal').on('show.bs.modal', function (e) {
-  $('.pool, #profile, .navigationBar').addClass('blur')
-});
-    $('.modal').on('hide.bs.modal', function (e) {
-  $('.pool, #profile, .navigationBar').removeClass('blur')
-});
-});
-
-
-//Navigation Bar Shrink on scroll
-$(window).scroll(function() {
-    var windscroll = $(window).scrollTop();
-    if (windscroll >= 195) {
-        $('.tab, #profile .userAvator, #profile .userName').addClass('fixed');
-    } else {
-        $('.tab, #profile .userAvator, #profile .userName').removeClass('fixed'); 
-    }
-
-}).scroll();
-

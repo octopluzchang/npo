@@ -1,0 +1,85 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="js/jquery-2.1.1.js"></script>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="css/chatroom.css" type="text/css">
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/dynamicgrid.js"></script>
+    <script type="text/javascript" src="js/myFunctions.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div class="navigationBar">
+        <span class="left">
+                <span class="logo">
+                    NPO Lab
+                </span>
+        </span>
+        
+        <span class="right">
+            <!--設定按鈕，暫時先拿掉-->
+            <!--<a href="#" data-toggle="modal" data-target=".edit">
+            <span id="editProfile" >
+            <img src="images/ic_setting.png">
+            </span>
+        </a>-->
+        <form id="searchBar">
+            <input type="submit" value=" ">
+            <input name="searchBarInput" type="text" placeholder="搜尋專案名稱" class="hidden">
+            
+                <!--<div class="searchBorder">
+                    <input class="searchInput" type="text" placeholder="輸入專案名稱或類別">
+                    <i class="searchIcon fa fa-search"></i>
+                </div>
+                <div class="dropdownTagList">
+                    <ul>
+                    </ul>
+                </div>-->
+            </form>
+            
+        
+            <span id="newProject" data-toggle="modal" data-target=".new">
+            <img src="images/ic_newProject.png">
+                <span style="display:none">建立新專案</span>
+            </span>
+        </span>
+    </div>
+    
+    <div id="sidebar">
+        <div class="sectionTitle">
+        聊天列表
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">專案發起者名稱</span>
+            <div class="context">Blablabla...</div>
+        </div>
+        
+    </div>
+    
+    <div id="main">
+        <div class="sectionTitle">
+        正在聊天的使用者名稱
+        </div>
+    <div id="singleChatroom">
+        <form>
+            <textarea></textarea>
+            <input type="submit">
+        </form>
+    </div>
+    <div id="sigleChatInfo">
+        <span class="userAvator small"></span>
+        <span class="userName">專案發起者名稱</span>
+    </div>
+        
+    </div>
+    
+    
+    
+</body>
+
+</html>
