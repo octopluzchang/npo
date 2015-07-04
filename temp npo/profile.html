@@ -1,108 +1,191 @@
 <html>
 
 <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="js/jquery-2.1.1.js"></script>
     <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/search.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <script type="text/javascript" src="js/main_functions.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/dynamicgrid.js"></script>
+    <script type="text/javascript" src="js/myFunctions.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
 </head>
 
 <body>
-    <div class="navBar">
+    <div class="navigationBar">
+
         <span class="left">
-            <span class="logo">
-                NPO Lab
-            </span>
+                <span class="logo">
+                    NPO Lab
+                </span>
+        </span>
         <span class="searchBar">
-                
+                <div class="searchBorder">
+                    <input class="searchInput" type="text" placeholder="輸入專案名稱或類別">
+                    <i class="searchIcon fa fa-search"></i>
+                </div>
+                <div class="dropdownTagList">
+                    <ul>
+                    </ul>
+                </div>
             </span>
-
-        </span>
+        
         <span class="right">
-             <span class="signIn">登入</span>
-        <span class="signUp">加入公益實驗室</span>
-
+            <!--設定按鈕，暫時先拿掉-->
+            <!--<a href="#" data-toggle="modal" data-target=".edit">
+            <span id="editProfile" >
+            <img src="images/ic_setting.png">
+            </span>
+                </a>-->
+            <a href="#" data-toggle="modal" data-target=".new">
+            <span id="newProject">
+            <img src="images/ic_newProject.png">
+            </span>
+                </a>
         </span>
+
     </div>
 
-    <div class="pool">
-        <div class="project" data-toggle="modal" data-target=".singleProject">
-            
-            <div class="projectImage"></div>
-            
-            <div class="projectHeader">
-                <h3 class="projectName">專案名稱</h3>
-                <div class="projectInfo">
-                    <div class="tagContainer"></div>
-                    <div class="projectTime">2015/06/27~2015/06/30</div>
-                    <div class="projectMemeber">10/20</div>
-                </div>
-            </div>
-            
-            <div class="projectFooter">
-                <span class="userAvator"></span>
-                <span class="userName">專案發起者名稱</span>
-            </div>
-        </div>
+    <div id="profile">
 
-    
-    
-    
-    
 
-    <div class="singleProject modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <a href="#" data-toggle="modal" data-target=".edit"><div class="userAvator big">
+            </div></a>
+        <div class="userName">一般使用者暱稱</div>
+        <div class="userTitle">一般使用者的稱號，可省略。</div>
+        <ul class="tab">
+            <a href="#"><li class="selected">找專案</li></a>
+            <a href="#"><li>進行中的專案</li></a>
+            <a href="#"><li>已完成的專案</li></a>
+            <a href="#"><li>追蹤的專案</li></a>
+            <a href="#"><li>我建立的專案</li></a>
+
+        </ul>
+
+    </div>
+
+        
+        <div class="pool js-masonry">
+
+
+
+            <div class="project">
+
                 <div class="projectImage">
+                    <img src="images/projectImagePlaceholder_1.png">
                 </div>
-                <div class="popUpHeader">
-                    <div class="actionContainer">
-                        <span>參加</span>
-                        <span>追蹤</span>
-                        <span data-dismiss="modal">關閉</span>
-                    </div>
-                    <h3 class="projectName">專案名稱</h3>
+
+                <div class="projectHeader">
+                    <a href="#" data-toggle="modal" data-target=".singleProject"><h3 class="projectName">專案名稱</h3></a>
+                    <ul class="tagContainer">
+                        <li>標籤</li>
+                    </ul>
                     <div class="projectInfo">
                         <div class="tagContainer"></div>
                         <div class="projectTime">2015/06/27~2015/06/30</div>
                         <div class="projectMemeber">10/20</div>
                     </div>
-                    
-                    
+                </div>
+
+                <div class="projectFooter">
+                    <a href="#" data-toggle="modal" data-target=".singleProfile">
+                    <span class="userAvator small"></span>
+                    <span class="userName">專案發起者名稱</span>
+                    </a>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <div class="singleProject modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="projectImage">
+                    <img src="images/projectImagePlaceholder_1.png">
+                </div>
+                <div class="popUpHeader">
+                    <div class="actionContainer">
+                        <span class="main">參加</span>
+                        <span>追蹤</span>
+                        <span data-dismiss="modal">關閉</span>
+                    </div>
+                    <h3 class="projectName">專案名稱</h3>
+                    <ul class="tagContainer">
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤標籤標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                        <li>標籤</li>
+                    </ul>
+                    <div class="projectInfo">
+                        <div class="tagContainer"></div>
+                        <div class="projectTime">2015/06/27~2015/06/30</div>
+                        <div class="projectMemeber">10/20</div>
+                    </div>
+
+
                 </div>
 
                 <div class="popUpContent">
                     <div class="projectContent">
-                        <p>專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述專案敘述</p>
+                        <p>這個專案的目的在於幫助公益團體有效的推廣宣傳活動。希望行銷相關背景的學生能夠一起加入！</p>
                     </div>
                 </div>
                 <div class="popUpFooter">
                     <h3>留言</h3>
                     <div class="leaveComment">
-                            
+
                         <textarea></textarea>
-                            <button>送出</button>
-                        </div>
-                    
-                    <div class="commentContainer">
-                        
-                        <div class="comment">
-                            <span class="userAvator"></span>
-                            <div class="userName">使用者名稱</div><div class="userContent">留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內</div>
-                            
-                        </div>
-                        
-                        <div class="comment">
-                            <span class="userAvator"></span>
-                            <div class="userName">使用者名稱</div><div class="userContent">留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內容留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內留言內容留言內容留言內容留言內</div>
-                            
-                        </div>
-                        
-                        
-                        
+                        <button>送出留言</button>
+                        <button>重新填寫</button>
+                        <button>分享專案</button>
                     </div>
-                    
+
+                    <div class="commentContainer">
+
+                        <div class="comment">
+                            <span class="userAvator small"></span>
+                            <div class="userName">使用者名稱<span class="commentTime"><br>1小時前</span>
+                            </div>
+
+                            <div class="userContent">
+                                <p>這個專案很棒！我很喜歡！</p>
+                            </div>
+
+                        </div>
+
+                        <div class="comment">
+                            <span class="userAvator small"></span>
+                            <div class="userName">使用者名稱<span class="commentTime"><br>2小時前</span>
+                            </div>
+                            <div class="userContent">
+                                <p>大家加油！</p>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
 
                 </div>
             </div>
@@ -110,14 +193,204 @@
     </div>
 
 
+    
+    
+    
+    
+    
+    
+    
+    <div class="singleProfile modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="popUpHeader">
+                    <div class="actionContainer">
+                        <span class="main">聯絡</span>
+                        <span data-dismiss="modal">關閉</span>
+                    </div>
+                    <div class="userAvator big"></div><br>
+                    <div class="userName">一般使用者暱稱</div>
+        <div class="userTitle">一般使用者的稱號，可省略。</div>
+                    <ul class="tagContainer">
+                        <li>平面設計</li>
+                        <li>網頁設計</li>
+                        <li>行銷規劃</li>
+                        <li>專案規劃</li>
+                    </ul>
+                </div>
+                
+                <div class="popUpContent">
+                    
+                    
+
+                    
+
+                </div>
+                <!--<div class="popUpFooter">
+                    <button>傳送即時訊息</button>
+                    <button data-dismiss="modal">取消</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+   
+
+    
+    
+    
+    
+    
+    
+
+
+<div class="new modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="projectImage">
+                    <button>上傳圖片</button>
+                    
+                </div>
+                <div class="popUpHeader">
+                    <div class="actionContainer">
+                        <span class="main">發佈</span>
+                        <span>儲存</span>
+                        <span data-dismiss="modal">關閉</span>
+                    </div>
+                    <input name="newProjectName" placeholder="專案名稱">
+                    <ul class="tagContainer">
+                        <input name="newProjectTags" placeholder="新增標籤">
+                    </ul>
+                    <div class="projectInfo">
+                        <div><input placeholder="專案開始時間" name="newProjectDate"></div><div><input placeholder="專案結束時間" name="newProjectDate"></div>
+                    </div>
+
+
+                </div>
+
+                <div class="popUpContent">
+                        <textarea placeholder="專案敘述"></textarea>
+                </div>
+                <!--<div class="popUpFooter">
+                    <button class="main">發佈</button>
+                    <button data-dismiss="modal">取消</button>
+                </div>-->
+            </div>
+            
+            
+            
+        </div>
+    </div>
+
+
+    
+    
+    
+    <div class="edit modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="popUpHeader">
+                    <div class="actionContainer">
+                        <span class="main">儲存</span>
+                        <span>登出</span>
+                        <span data-dismiss="modal">關閉</span>
+                    </div>
+                    <h3>編輯個人資料</h3>
+                </div>
+                <div class="popUpContent">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>大頭照</th>
+                                <td colspan="2">
+                                   <span class="userAvator"></span>
+                                    <button>上傳照片</button>
+                                </td>
+                                <td></td>
+
+                            </tr>
+                            <tr>
+                                <th>暱稱</th>
+                                <td colspan="2">
+                                    <input type="text" placeholder="" value="一般使用者暱稱">
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>稱號</th>
+                                <td colspan="2">
+                                    <input type="text" placeholder="" value="一般使用者的稱號，可省略。">
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td colspan="2">
+                                    <input type="text" placeholder="" value="XXXX@xxx.com">
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>技能</th>
+                                <td colspan="2">
+                                    <input type="text" placeholder="填入你的技能標籤">
+                                </td>
+                                <td></td>
+                            </tr>
+                            
+                            <tr>
+                                <th>隱私設定</th>
+                                <td colspan="2">
+                                    <label><input type="checkbox">別人無法傳送訊息給我</label>
+                                </td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                        
+                                <th>舊密碼</th>
+                                <td colspan="2">
+                                    <input type="password">
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>新密碼</th>
+                                <td colspan="2">
+                                    <input type="password">
+                                </td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <th>再輸入一次新密碼</th>
+                                <td colspan="2">
+                                    <input type="password">
+                                </td>
+                                <td></td>
+                            </tr>
+
+
+
+                        </tbody>
+                    </table>
 
 
 
 
 
 
-
-
+                </div>
+                <!--<div class="popUpFooter">
+                    <button class="main">儲存</button>
+                    <button data-dismiss="modal">取消</button>
+                </div>-->
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
