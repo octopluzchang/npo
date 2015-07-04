@@ -88,10 +88,7 @@ $container.imagesLoaded( function() {
 $(document).ready(function(){
 //Tab Selector
     $('.tab li').click(function(){
-        /*if($('.tab li').hasClass('selected')){
-            $(this).removeClass('selected')
-        }*/
-         $('.tab li').removeClass('selected');
+        $('.tab li').removeClass('selected');
         $(this).addClass('selected');
     });
 
@@ -113,7 +110,7 @@ $(document).ready(function(){
         $('#loginPanel').slideUp();
     });
     
-//Randomly adding projects
+/*//Randomly adding projects
     var e = $('.project');
     //Set Project number
     for (var i = 0; i<100;i++) {
@@ -130,7 +127,7 @@ $(document).ready(function(){
     var titles = ['徵求學生設計Logo', '慈善晚會設計規劃流程', '社會設計實踐與分析研究計畫', '企劃專題講座與整合行銷之實踐'];
     $('.projectName').each(function(){ 
     $(this).html(titles[Math.floor(Math.random() * images.length)]);
-    });
+    });*/
     
     //Random Numbers of tags
     /*var tags = $('.projectHeader .tagContainer li');

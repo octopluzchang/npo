@@ -301,8 +301,9 @@ h3.projectName {
     left: 20px;
     opacity: 1;
 }
-    .userName.fixed {
+.userName.fixed {
     font-size: 13px !important;
+    width: auto !important;
     position: fixed !important;
     z-index: 999;
     top: 60px;
