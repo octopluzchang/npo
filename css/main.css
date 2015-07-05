@@ -1,0 +1,555 @@
+body {
+    margin: 0;
+    background-color: #f2f2f2 !important;
+    color: #666;
+    
+}
+
+.blur {
+ -webkit-filter:blur(2px);
+-moz-filter:blur(2px);
+}
+
+
+*, button:focus, input:focus, a:focus{
+    outline: none !important;  
+
+}
+
+
+
+p {
+    color: #666;
+}
+
+a {
+    text-decoration: none;
+    color: #622b89 !important; 
+}
+
+button {
+    height: 40px;
+    padding: 10px;
+    border: none;
+    background-color: #666;
+    color: #fff !important;
+    min-width: 100px;
+}
+
+
+    button.main {
+        background-color: #8215d1;
+        color: #ffffff;
+    }
+
+input[type="text"], input[type="password"], input[type="email"] {
+    height: 40px;
+    padding: 10px;
+}
+
+
+.wrapper {
+    width: 1024px;
+    margin: 0 auto;
+    height: inherit;
+       
+}
+/*Navigation Bar*/
+.navigationBar {
+    width: 100%;
+    background-color:#8215d1;
+    top: 0;
+    padding: 5px 0;
+    position: fixed;
+    min-width: 1024px;
+    float: left;
+    z-index: 999;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.navigationBar .left {
+    float: left;
+    padding: 10px
+}
+
+
+
+
+
+.navigationBar .right {
+    position: absolute;
+    right: 40px;
+    
+}
+
+    #loginPanel {
+        display: none;
+        position: fixed;
+        right: 20px;
+        top: 50px;
+        z-index: 99;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+        #loginPanel ul {
+            margin-bottom: 0px
+        }
+        #loginPanel li {
+            padding: 10px;
+            text-align: center;
+        }
+
+.logo {
+    float: left;
+    color: #fff;
+}
+
+    .logo img {
+        width: inherit;
+        height: 40px;
+    }
+
+.tagContainer {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.right .signUp, .right .signIn {
+    color: #fff;
+    float: inherit;
+    margin-left: 5px;
+    padding: 10px;
+
+}
+
+#editProfile, #newProject{
+    margin-left:20px;
+}
+
+
+
+
+
+/*Project Pool*/
+
+.pool {
+    width: 1024px;
+    margin: 300px auto;
+}
+
+.pool[data-columns]::before {
+	content: '3 .column.size-1of3';
+}
+
+/*Single Project*/
+.project {
+    float: left;
+    border: 1px solid #f2f2f2;
+    background-color: #fff;
+    width: 320px;
+    margin: 5px 10px;
+    border-radius: 5px;
+    background-color: #fff;
+
+}
+
+
+.projectContent, .projectHeader, .projectFooter {
+    margin: 15px;
+}
+
+.projectHeader {
+    margin-bottom: 20px;
+}
+
+
+.projectImage img {
+    width: 320px;
+    background-color: #989898;
+}
+
+.projectInfo {
+    margin: 5px 0;
+    font-size: 13px
+}
+
+.userAvator {
+    background-color: #666;
+    display: inline-block;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+
+.userAvator.small{
+    width: 35px;
+    height: 35px;
+}
+.userAvator.big {
+    width: 100px;
+    height: 100px;
+}
+
+
+.userName {
+    float: inherit;
+    vertical-align:text-bottom;
+    display: inline-block;
+    padding: 10px;
+}
+
+h3.projectName {
+    font-size: 19px;
+    line-height: 1.3em;
+    font-weight: 600;
+}
+
+.projectFooter {
+    padding: 10px 0;
+}
+
+.singleProject .projectContent {
+    padding: 10px 0;
+    border-bottom: 1px  solid #bfbfbf;
+}
+
+.tag {
+    padding: 3px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    margin: 0 5px;
+    position: absolute;
+}
+
+.searchProject {
+    height: 40px;
+    width:200px;
+    font-size: 15px;
+    margin: 0 5px;
+}
+
+
+
+
+
+
+
+
+
+/*Profile Style */
+
+#profile {
+    padding-top:70px; 
+    text-align: center;
+    clear: both;
+    width: 100%;
+    min-width: 1024px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background-color: #fff;
+    z-index: 10;
+        
+}
+    #profile .userName {
+        font-size: 16px;
+        display: inline-block;
+        width: 100%;
+        
+}
+
+    #profile .userTitle {
+        font-size: 15px;
+        display: inline-block;
+        width: 100%;
+        
+}
+
+    .userTitle {
+        color: #bfbfbf;
+    }
+
+
+#profile .tab{
+    float: left;
+    text-align: center;
+    width: 100%;
+    min-width: 1024px;
+    background-color: #fff;
+    position: absolute;
+}
+.tab.fixed {
+    position: fixed !important;
+    z-index: 99 !important;
+    top: 50px;
+    box-shadow: 0 2px 2px rgba(126, 126, 126, 0.15);
+   
+    
+}
+.userAvator.fixed {
+    position: fixed !important;
+    z-index: 999;
+    width: 35px !important;
+    height: 35px !important;
+    top: 60px;
+    left: 20px;
+    opacity: 1;
+}
+    .userName.fixed {
+    font-size: 13px !important;
+    position: fixed !important;
+    z-index: 999;
+    top: 60px;
+    left: 60px;
+    text-align: left !important;
+    }
+
+
+    #profile .tab li {
+        display: inline-block;
+        padding: 15px;
+    }
+        #profile .tab li.right {
+            float: right;
+        }
+    
+        #profile .tab li.selected {
+            border-bottom: 3px solid #8215d1;
+            color: #8215d1;
+        }
+        
+
+/* Popups */
+.popUpBack {
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.popUpHeader, .popUpContent, .popUpFooter {
+    margin: 15px;
+}
+
+.edit .popupFooter {
+    text-align: right;
+}
+
+.profileContainer {
+    width: 1024px;
+    margin: 70px auto 0;
+}
+
+.profilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #989898;
+    margin: 0 auto;
+}
+
+.profileAction {
+    float: right;
+}
+
+.poolSelecter li {
+    display: inline-block;
+}
+
+.projectTime:before {
+    content: '專案時間：';
+}
+
+.projectMemeber:before {
+    content: '專案人數：';
+}
+
+
+
+
+
+.actionContainer {
+    position: absolute;
+    right: 10px;
+    top: 30px;
+}
+
+
+.actionContainer span {
+    padding: 20px 15px;
+    margin: 0 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow:0 3px 3px rgba(0,0,0,0.3);
+}
+    .actionContainer span.main {
+         background-color: #8215d1;
+        color: #fff;
+         
+     }
+
+     .actionContainer span:hover {
+         transform: scale(1.1);
+         
+     }
+    .actionContainer span:active {
+        box-shadow:0 0px 3px rgba(0,0,0,0.3);
+    }
+
+.userContent {
+    display: inline-block;
+    padding: 10px;
+    vertical-align: text-bottom;
+    list-style: disc;
+    margin: 0 10px;
+}
+
+.comment {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #999;
+}
+
+    .comment:last-child {
+    border-bottom: none;
+}
+
+.leaveComment textarea {
+    width: 100%;
+}
+
+.leaveComment button {
+ margin: 10px 0 30px;   
+}
+
+.commentTime {
+    font-size: 12px
+}
+
+.tagContainer li {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #999;
+    font-size: 12px;
+}
+
+
+
+.comment .userName {
+    padding: 3px;
+}
+
+.projectImage img {
+    width: 100%;
+}
+
+
+
+/* Form Style */
+
+table {
+    width: 400px;
+    margin: 0 auto;
+}
+
+textarea {
+    min-height: 80px;
+    border: none;
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 100%;
+}
+tr {
+    margin: 10px;   
+    padding: 10px;
+    max-width: 10px;
+}
+th {
+    font-size: 14px;
+    text-align: right !important;
+    padding-right: 15px !important;
+    width: 30%;
+    color: #999;
+}
+td {
+    height: 60px;
+}
+
+table input[type="text"], table input[type="password"], table input[type="email"] {
+    width: 250px;
+}
+
+/* Pop up Styles */
+
+/* Sign In */
+.signIn {
+    text-align: center;
+}
+
+
+    /* Single Profile*/
+.singleProfile .popUpHeader {
+    text-align: center;
+}
+
+    .singleProfile .popUpFooter {
+     text-align: right;   
+    }
+
+    /* Edit Profile */
+
+.edit .userAvator {
+    width: 50px !important;
+    height: 50px !important;
+    vertical-align: middle;
+    margin-right: 10px
+}
+.edit .userName input {
+ font-size: 18px;  
+}
+
+
+
+    /* New Project */
+
+.new .projectImage {
+    height: 300px;
+    box-sizing: border-box;
+    padding: 140px;
+    text-align: center;
+    border: 1px dashed #bfbfbf;
+}
+.new .popUpFooter {
+    text-align: right;
+}
+
+.new input{
+ height: 40px;   
+    margin: 10px;
+    border: none;
+}
+
+.new input[name="newProjectName"]{
+    font-size: 18px;
+}
+
+
+    .new .projectImage button {
+        width: 200px;
+    
+    }
+
+    .new textarea {
+        overflow: visible;
+    }
