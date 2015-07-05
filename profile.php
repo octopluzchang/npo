@@ -288,7 +288,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
 							使用帳號：<?php echo $row_RecMember["m_username"]; ?>
 						</p>
 						<p>
-							使用密碼：
+							更新密碼：
 							<input name="m_passwd" type="password" class="normalinput" id="m_passwd">
 							<br>
 						</p>
