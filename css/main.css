@@ -27,7 +27,7 @@ a {
     color: #622b89 !important; 
 }
 
-button {
+button, input[type="submit"] {
     height: 40px;
     padding: 10px;
     border: none;
@@ -37,7 +37,7 @@ button {
 }
 
 
-    button.main {
+    button.main, input[type="submit"].main {
         background-color: #8215d1;
         color: #ffffff;
     }
@@ -47,6 +47,9 @@ input[type="text"], input[type="password"], input[type="email"] {
     padding: 10px;
 }
 
+input[type="submit"]{
+    
+}
 
 .wrapper {
     width: 1024px;
@@ -54,7 +57,11 @@ input[type="text"], input[type="password"], input[type="email"] {
     height: inherit;
        
 }
-/*Navigation Bar*/
+
+
+
+
+/* Navigation Bar */
 .navigationBar {
     width: 100%;
     background-color:#8215d1;
@@ -69,7 +76,7 @@ input[type="text"], input[type="password"], input[type="email"] {
 
 .navigationBar .left {
     float: left;
-    padding: 10px
+    padding: 10px 30px;
 }
 
 
@@ -126,10 +133,67 @@ input[type="text"], input[type="password"], input[type="email"] {
 
 #editProfile, #newProject{
     margin-left:20px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    float: right;
 }
 
+/* Search Bar Style */
+form#searchBar {
+    display: inline;
+}
+#searchBar input[type="text"]{
+    width: 250px;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    -webkit-transition: all 2s; 
+    -moz-transition: all 2s; 
+    -o-transition: all 2s; 
+    transition: all 2s;
+}
 
+#searchBar input[type="text"].hidden{
+    width: 0px;
+    display: none;
+    -webkit-transition: all 2s; 
+    -moz-transition: all 2s; 
+    -o-transition: all 2s; 
+    transition: all 2s;
+}
 
+#searchBar ::-webkit-input-placeholder {
+   color: #fff;
+}
+
+#searchBar :-moz-placeholder { /* Firefox 18- */
+   color: red;  
+}
+
+#searchBar ::-moz-placeholder {  /* Firefox 19+ */
+   color: red;  
+}
+
+#searchBar :-ms-input-placeholder {  
+   color: red;  
+}
+
+#searchBar input[type="submit"]{
+    background-color: transparent;
+    background-image: url(../images/ic_search.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-position:center;
+    width: 40px;
+    clear: both;
+    height: 40px;
+    border: none;
+    margin: 0;
+    
+}
 
 
 /*Project Pool*/
@@ -164,7 +228,34 @@ input[type="text"], input[type="password"], input[type="email"] {
     margin-bottom: 20px;
 }
 
+.project .projectStatus {
+    margin-bottom: -15px;
+    padding: 0;
+}
+    .projectStatus.active {
+        /*徵人中*/
+    }
 
+    .projectStatus.closed {
+        /*結束徵人*/
+    }
+
+    .projectStatus.finished {
+        /*已完成*/
+    }
+
+    .projectStatus.draft {
+        /*草稿*/
+    }
+
+    .projectStatus.mine {
+        /*我建立的*/
+    }
+    
+.project .projectImage {
+    cursor: pointer;
+    
+}
 .projectImage img {
     width: 320px;
     background-color: #989898;
@@ -179,6 +270,7 @@ input[type="text"], input[type="password"], input[type="email"] {
     background-color: #666;
     display: inline-block;
     border-radius: 50%;
+    background-image: url(../images/profileImage.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -203,14 +295,16 @@ input[type="text"], input[type="password"], input[type="email"] {
     padding: 10px;
 }
 
-h3.projectName {
+.project h3.projectName {
     font-size: 19px;
     line-height: 1.3em;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .projectFooter {
     padding: 10px 0;
+    cursor: pointer;
 }
 
 .singleProject .projectContent {
@@ -300,8 +394,9 @@ h3.projectName {
     left: 20px;
     opacity: 1;
 }
-    .userName.fixed {
+.userName.fixed {
     font-size: 13px !important;
+    width: auto !important;
     position: fixed !important;
     z-index: 999;
     top: 60px;
@@ -313,6 +408,8 @@ h3.projectName {
     #profile .tab li {
         display: inline-block;
         padding: 15px;
+        list-style: none;
+        cursor: pointer;
     }
         #profile .tab li.right {
             float: right;
@@ -337,6 +434,10 @@ h3.projectName {
 .popUpHeader, .popUpContent, .popUpFooter {
     margin: 15px;
 }
+.popUpHeader {
+    padding-bottom: 30px;   
+}
+
 
 .edit .popupFooter {
     text-align: right;
@@ -381,7 +482,18 @@ h3.projectName {
     top: 30px;
 }
 
-
+.actionContainer input[type="submit"] {
+    padding: 20px 15px;
+    margin: 0 5px;
+    background-color: #fff;
+    border: none;
+     border-radius: 50%;
+    box-shadow:0 3px 3px rgba(0,0,0,0.3);
+    
+    height: auto;
+    min-width: inherit;
+    color: inherit !important;
+}
 .actionContainer span {
     padding: 20px 15px;
     margin: 0 5px;
@@ -392,7 +504,7 @@ h3.projectName {
     cursor: pointer;
     box-shadow:0 3px 3px rgba(0,0,0,0.3);
 }
-    .actionContainer span.main {
+    .actionContainer span.selected, .actionContainer input.selected {
          background-color: #8215d1;
         color: #fff;
          
@@ -412,25 +524,33 @@ h3.projectName {
     vertical-align: text-bottom;
     list-style: disc;
     margin: 0 10px;
+    width: 100%;
 }
 
 .comment {
     margin-bottom: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #bfbfbf;
 }
 
     .comment:last-child {
     border-bottom: none;
 }
-
+.leaveComment {
+    float: right;
+    width: 100%;
+}
 .leaveComment textarea {
     width: 100%;
 }
 
 .leaveComment button {
- margin: 10px 0 30px;   
+    margin: 10px 0 0 10px;   
+    float: right
 }
+
+
+
 
 .commentTime {
     font-size: 12px
@@ -442,6 +562,12 @@ h3.projectName {
     margin: 5px 0;
     border: 1px solid #999;
     font-size: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+.tagContainer li:hover {
+  opacity: 1;   
 }
 
 
@@ -490,6 +616,13 @@ table input[type="text"], table input[type="password"], table input[type="email"
     width: 250px;
 }
 
+th .detail {
+       font-size: 15px;
+        text-align: center;
+        color: #622b89;
+}
+
+
 /* Pop up Styles */
 
 /* Sign In */
@@ -534,8 +667,8 @@ table input[type="text"], table input[type="password"], table input[type="email"
     text-align: right;
 }
 
-.new input{
- height: 40px;   
+.new .projectInfo input{
+    height: 40px;   
     margin: 10px;
     border: none;
 }
@@ -553,3 +686,4 @@ table input[type="text"], table input[type="password"], table input[type="email"
     .new textarea {
         overflow: visible;
     }
+

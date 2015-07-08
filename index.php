@@ -177,32 +177,41 @@ if (isset($_POST["action"]) && ($_POST["action"] == "join")) {
                 <table>
                     <tbody>
                         <tr>
-                            <th scope="row">帳號資料</th>
-                            <?php if(isset($_GET["errMsg"]) && ($_GET["errMsg"]=="1")){?>
-								<div class="errDiv"><font color="red">
-									帳號 <?php echo $_GET["username"]; ?> 已經有人使用！</font>
-								</div>
-							<?php } ?>
-                            <td>
+                            <th scope="row" colspan="2">
+                            <div class="detail">
+                                <?php if(isset($_GET["errMsg"]) && ($_GET["errMsg"]=="1")){?>
+<div><?php echo $_GET["username"]; ?> 看起來這帳號已經有囉</div>
                                 <hr>
+                                </div>
+                            </th>
+                            <td></td>
+                            
+								
+							<?php } ?>
+                        </tr>
+                        <tr>
+                            <th scope="row">暱稱</th>
+                            <td>
+                                <input name="m_name" type="text" class="normalinput" id="m_name">
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">電子郵件<font color="#FF0000">*</font></th>
+                            <th scope="row">電子郵件</th>
                             <td>
                                 <input name="m_username" type="text" class="" id="m_username">
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">密碼<font color="#FF0000">*</font></th>
+                            <th scope="row">
+                                密碼
+                            </th>
 
                             <td>
-                                <input name="m_passwd" type="password" class="" id="m_passwd">
-                                <p>請填入5~10個字元以內的英文字母、數字、以及各種符號組合</p>
+                                <input name="m_passwd" type="password" class="" id="m_passwd" placeholder="請填入5~10個字元">
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">再輸入一次密碼<font color="#FF0000">*</font></th>
+                            <th scope="row">再輸入一次密碼</th>
                             <td>
                                 <input name="m_passwdrecheck" type="password" class="" id="m_passwdrecheck">
                             </td>
@@ -211,66 +220,15 @@ if (isset($_POST["action"]) && ($_POST["action"] == "join")) {
                 </table>
                 <table>
                     <tbody>
-                        <tr>
-                            <th scope="row">個人資料</th>
-                            <td>
-                                <hr>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">姓名<font color="#FF0000">*</font></th>
-                            <td>
-                                <input name="m_name" type="text" class="normalinput" id="m_name">
-                            </td>
-                        </tr>
-                        <tr>
-                        	 <th scope="row">性別</th>
-							<td>
-								<input name="m_sex" type="radio" value="女" checked>
-								女
-								<input name="m_sex" type="radio" value="男">
-								男
-							</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">生日</th>
-                            <td>
-                                <input name="m_birthday" type="date" class="normalinput" id="m_birthday">
-                                <p>為西元格式(YYYY-MM-DD)</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">電話</th>
-                            <td>
-                                <input name="m_phone" type="text" class="normalinput" id="m_phone">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">住址</th>
-                            <td>
-                                <input name="m_address" type="text" class="normalinput" id="m_address">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">技能</th>
-                            <td>
-                                <input name="m_skill" type="text" class="" id="m_skill">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">學歷</th>
-                            <td>
-                                <input name="m_academic" type="text" class="" id="m_academic">
-                            </td>
-                        </tr>
+                        
+                        
+                        
                     </tbody>
                 </table>
-                <p>
-					<font color="#FF0000">*</font> 表示為必填的欄位
-				</p>
+                
                 <hr>
 					<input name="action" type="hidden" id="action" value="join">
-					<input type="submit" name="Submit2" value="送出申請">
+					<input type="submit" name="Submit2" value="送出申請" class="main">
 					
             </form>
             </div>
@@ -287,11 +245,7 @@ if (isset($_POST["action"]) && ($_POST["action"] == "join")) {
 				<div class="popUpHeader">
 					<div class="actionContainer">
 						<form name="form1" method="post" action="">
-						<span class="main">
-							<button type="submit" name="login" id="login">
-								登入
-							</button>
-						</span>
+                        <input type="submit" name="login" id="login" class="main" value="登入">
 						<span data-dismiss="modal">關閉</span>
 					</div>
 					<h3>歡迎回來</h3>

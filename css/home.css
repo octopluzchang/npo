@@ -140,6 +140,10 @@ z-index: -3;
 #doSomething, #joinUs {
  background-color: #fff;   
 }
-#joinUs {  
+#joinUs.section {  
+    height: inherit;
 }
+
+
+
 
