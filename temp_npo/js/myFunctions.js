@@ -59,7 +59,7 @@ $(document).ready(function(){
     });
     
     
-/*//Randomly adding projects
+//Randomly adding projects
     var e = $('.project');
     //Set Project number
     for (var i = 0; i<100;i++) {
@@ -79,10 +79,10 @@ $(document).ready(function(){
     });*/
     
     //Random Numbers of tags
-    /*var tags = $('.projectHeader .tagContainer li');
+    var tags = $('.projectHeader .tagContainer li');
     for (var i = 0; i< Math.random();i++) {
     tags.clone().insertAfter(tags);
-    }*/
+    }
     
     
 //Blurry Filter on popup shows
