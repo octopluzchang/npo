@@ -276,8 +276,6 @@ form#searchBar {
     background-size: 100%;
 }
 
-
-
 .userAvator.small{
     width: 35px;
     height: 35px;
@@ -286,7 +284,11 @@ form#searchBar {
     width: 100px;
     height: 100px;
 }
-
+.userAvator img{
+    overflow: hidden;
+    width: inherit;
+    height: inherit;
+}
 
 .userName {
     float: inherit;

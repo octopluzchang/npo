@@ -3,19 +3,21 @@ $(window).scroll(function() {
     parallax();
     var windscroll = $(window).scrollTop();
     if (windscroll >= 600) {
-        $('#homeLogo').fadeIn();
+        //$('#homeLogo').fadeIn();
          $('#homeNav').css({
-             'background-color': '#fff',
-            'border-bottom': '1px solid #8215d1'
+             //'background-color': '#fff',
+             //'opacity': '0.8',
          });
-        
+        $('#loginNav').fadeIn();
+        $('#aboutNav, #landing .content').fadeOut();
 
     } else {
-          $('#homeLogo').fadeOut();
+        //$('#homeLogo').fadeOut();
         $('#homeNav').css({
-             'background-color': '#transparent',
-            'border-bottom': 'none'
+             //'background-color': 'transparent',
          });
+        $('#loginNav').fadeOut();
+        $('#aboutNav, #landing .content').fadeIn();
 
     }
      
@@ -24,8 +26,9 @@ $(window).scroll(function() {
 //Parallox Scrolling Controll
 function parallax(){
   var scrolled = $(window).scrollTop();
-    $('#landing video').css('opacity',1-(scrolled*0.003));
-    $('#landing .content').css('opacity',1-(scrolled*0.003));
+    //$('#landing video').css('opacity',1-(scrolled*0.003));
+    //$('#landing .content').css('opacity',1-(scrolled*0.003));
+    $('#landing .content').css('margin-top',15-(scrolled*0.1)+'vh');
     $('#about .content').css('margin-left',-(scrolled*0.5)+'px');
     $('#doSomething .content').css('margin-right',500-(scrolled*0.5)+'px');
     $('#getSomething .content').css('margin-left',1000-(scrolled*0.5)+'px');
@@ -46,7 +49,7 @@ $('a[href*=#]:not([href=#])').click(function() {
 						
 				if (target.length) { 
 					$('html,body').animate({ 
-						scrollTop: target.offset().top-70 }, 500); return false; } } 
+						scrollTop: target.offset().top }, 500); return false; } } 
 						
 						
 			

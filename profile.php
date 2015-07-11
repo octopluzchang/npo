@@ -99,7 +99,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
     <div id="profile">
         <a href="#" data-toggle="modal" data-target=".edit">
             <div class="userAvator big">
-               <img class="img-circle" height="100px" width="100px" src="profilepic/<?php echo $row_RecMember["m_profilepic"]; ?>">
+               <img class="img-circle" src="profilepic/<?php echo $row_RecMember["m_profilepic"]; ?>">
             </div>
         </a>
         <div class="userName"><?php echo $row_RecMember["m_name"];?></div>

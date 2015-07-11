@@ -21,21 +21,39 @@ border-bottom: 1px solid #bfbfbf;
     top: 0;
     width: 100%;;
     padding:30px 0;
+
 }
 
     #homeNav span {
-        margin-left: 50px;
+        margin-left: 10px;
         float: right;
-        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.54);
+        padding: 10px;
+        color: #fff;
     }
+        #loginNav {
+          display: none;
+        }
     
-    #homeLogo {
+   /* #homeLogo {
         display: none;
         float: left;
-    }
+    }*/
          #homeLogo span {
              margin-left: 0;
          }
+
+    #aboutNav {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+    }
+    #aboutNav a {
+        color: #fff !important;   
+    }
 
 #intro {
  color: #fff;   
@@ -76,9 +94,9 @@ border-bottom: 1px solid #bfbfbf;
     }
 
     .content {
-        text-align: center;
+       /* text-align: center;
         box-sizing: border-box;
-        margin-top: 40vh;
+        margin-top: 40vh;*/
     }
 
 
@@ -98,17 +116,30 @@ border-bottom: 1px solid #bfbfbf;
 
     /* Landing */
 
-#about {
-    z-index: 4;
+#landing.section {
+ height: 95vh;   
 }
 
 #landing .content {
     z-index: 2;
     position: fixed;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 15vh;
+    display: inline;
+    width: 500px;
+    left: 50%;
+    margin-left: -250px;
 }
 
-#landing {
+#landing input {
+    width: 300px;
+}
+
+
+#landing h1 {
     z-index: -2;
+    color: #fff;
 }
 
 #landing video {
@@ -129,7 +160,9 @@ z-index: -3;
 
 /* About */
 
-
+#about {
+    z-index: 4;
+}
 
 #about, #getSomething {
     background-color: #8215d1; 
@@ -138,12 +171,14 @@ z-index: -3;
 }
 
 #doSomething, #joinUs {
- background-color: #fff;   
-}
-#joinUs.section {  
-    height: inherit;
+ background-color: #fff;
 }
 
+
+
+#joinUs {
+    z-index: 9;   
+}
 
 
 
