@@ -1,4 +1,86 @@
-<?php header( "Content-Type: text/html; charset=utf-8"); require_once ( "connMysql.php"); session_start(); //檢查是否有經過登入，如有將重新導向至會員中心 if (isset($_SESSION[ "loginMember"]) && ($_SESSION[ "loginMember"] !="" )) { //若帳號等級為member，則導向會員中心 if ($_SESSION[ "memberLevel"]=="member" ) { header( "Location: profile.php"); }else{ header( "Location: member_admin.php"); } } //執行會員登入 if (isset($_POST[ "username"]) && isset($_POST[ "passwd"])) { //連結登入會員資料 $query_RecLogin="SELECT * FROM `memberdata` WHERE `m_username` ='" . $_POST[ "username"] . "'"; $RecLogin=m ysql_query($query_RecLogin); //取出帳號及密碼的值 $row_RecLogin=m ysql_fetch_assoc($RecLogin); $username=$ row_RecLogin[ "m_username"]; $passwd=$ row_RecLogin[ "m_passwd"]; $level=$ row_RecLogin[ "m_level"]; //比對密碼，若成功則進入登入狀態 if (md5($_POST[ "passwd"])==$ passwd) { //計算登入次數及更新登入時間 $query_RecLoginUpdate="UPDATE `memberdata` SET `m_login` +1, `m_logintime`=NOW() WHERE `m_username`='" . $_POST[ "username"] . "'"; mysql_query($query_RecLoginUpdate); //設定登入者的名稱及等級 $_SESSION[ "loginMember"]=$ username; $_SESSION[ "memberLevel"]=$ level; //使用Cookie紀錄登入資料 if (isset($_POST[ "rememberme"]) && ($_POST[ "rememberme"]=="true" )) { setcookie( "remUser", $_POST[ "username"], time() + 365 * 24 * 60); setcookie( "remPass", $_POST[ "passwd"], time() + 365 * 24 * 60); } else{ if (isset($_COOKIE[ "remUser"])) { setcookie( "remUser", $_POST[ "username"], time() - 100); setcookie( "remPass", $_POST[ "passwd"], time() - 100); } } //若帳號等級為member，導向會員中心 if ($_SESSION[ "memberLevel"]=="member" ) { header( "Location: profile.php"); } else{ header( "Location: member_admin.php"); } } else{ header( "Location: index.php?errMsg=1"); } } if (isset($_POST[ "action"]) && ($_POST[ "action"]=="join" )) { //確認帳號是否已經註冊 $query_RecFindUser="SELECT `m_username` FROM `memberdata` WHERE `m_username`='" . $_POST[ "m_username"] . "'"; $RecFindUser=m ysql_query($query_RecFindUser); if (mysql_num_rows($RecFindUser)> 0) { header("Location: profile.php?errMsg=1&username=" . $_POST["m_username"]); } else{ //若沒有執行新增的動作 $query_insert = "INSERT INTO `memberdata` (`m_name` ,`m_username` ,`m_passwd` ,`m_sex` ,`m_skill` ,`m_birthday` ,`m_phone`,`m_address`, `m_academic`, `m_description`, `m_jointime`) VALUES ("; $query_insert .= "'" . $_POST["m_name"] . "',"; $query_insert .= "'" . $_POST["m_username"] . "',"; $query_insert .= "'" . md5($_POST["m_passwd"]) . "',"; $query_insert .= "'" . $_POST["m_sex"] . "',"; //$query_insert .= "'" . $_POST["m_profilepic"] . "',"; $query_insert .= "'" . $_POST["m_skill"] . "',"; $query_insert .= "'" . $_POST["m_birthday"] . "',"; $query_insert .= "'" . $_POST["m_phone"] . "',"; $query_insert .= "'" . $_POST["m_address"] . "',"; $query_insert .= "'" . $_POST["m_academic"] . "',"; $query_insert .= "'" . $_POST["m_description"] . "',"; $query_insert .= "NOW())"; //echo $query_insert; mysql_query($query_insert); header("Location: profile.php"); } } ?>
+<?php
+header("Content-Type: text/html; charset=utf-8");
+require_once ("connMysql.php");
+session_start();
+//檢查是否有經過登入，如有將重新導向至會員中心
+if (isset($_SESSION["loginMember"]) && ($_SESSION["loginMember"] != "")) {
+    //若帳號等級為member，則導向會員中心
+    if ($_SESSION["memberLevel"] == "member") {
+        header("Location: profile.php");
+    }else{
+        header("Location: member_admin.php");
+    }
+}
+//執行會員登入
+if (isset($_POST["username"]) && isset($_POST["passwd"])) {
+    //連結登入會員資料
+    $query_RecLogin = "SELECT * FROM `memberdata` WHERE `m_username` ='" . $_POST["username"] . "'";
+    $RecLogin = mysql_query($query_RecLogin);
+    //取出帳號及密碼的值
+    $row_RecLogin = mysql_fetch_assoc($RecLogin);
+    $username = $row_RecLogin["m_username"];
+    $passwd = $row_RecLogin["m_passwd"];
+    $level = $row_RecLogin["m_level"];
+    //比對密碼，若成功則進入登入狀態
+    if (md5($_POST["passwd"]) == $passwd) {
+        //計算登入次數及更新登入時間
+        $query_RecLoginUpdate = "UPDATE `memberdata` SET `m_login` +1, `m_logintime`=NOW() WHERE `m_username`='" . $_POST["username"] . "'";
+        mysql_query($query_RecLoginUpdate);
+        //設定登入者的名稱及等級
+        $_SESSION["loginMember"] = $username;
+        $_SESSION["memberLevel"] = $level;
+        //使用Cookie紀錄登入資料
+        if (isset($_POST["rememberme"]) && ($_POST["rememberme"] == "true")) {
+            setcookie("remUser", $_POST["username"], time() + 365 * 24 * 60);
+            setcookie("remPass", $_POST["passwd"], time() + 365 * 24 * 60);
+        }
+        else{
+            if (isset($_COOKIE["remUser"])) {
+                setcookie("remUser", $_POST["username"], time() - 100);
+                setcookie("remPass", $_POST["passwd"], time() - 100);
+            }
+        }
+        //若帳號等級為member，導向會員中心
+        if ($_SESSION["memberLevel"] == "member") {
+            header("Location: profile.php");
+        }
+        else{
+            header("Location: member_admin.php");
+        }
+    }
+    else{
+        header("Location: index.php?errMsg=1");
+    }
+}
+
+if (isset($_POST["action"]) && ($_POST["action"] == "join")) {
+    //確認帳號是否已經註冊
+    $query_RecFindUser = "SELECT `m_username` FROM `memberdata` WHERE `m_username`='" . $_POST["m_username"] . "'";
+    $RecFindUser = mysql_query($query_RecFindUser);
+    if (mysql_num_rows($RecFindUser) > 0) {
+        header("Location: profile.php?errMsg=1&username=" . $_POST["m_username"]);
+    }
+    else{
+        //若沒有執行新增的動作
+        $query_insert = "INSERT INTO `memberdata` (`m_name` ,`m_username` ,`m_passwd` ,`m_sex` ,`m_skill` ,`m_birthday` ,`m_phone`,`m_address`, `m_academic`, `m_description`, `m_jointime`) VALUES (";
+        $query_insert .= "'" . $_POST["m_name"] . "',";
+        $query_insert .= "'" . $_POST["m_username"] . "',";
+        $query_insert .= "'" . md5($_POST["m_passwd"]) . "',";
+        $query_insert .= "'" . $_POST["m_sex"] . "',";
+        //$query_insert .= "'" . $_POST["m_profilepic"] . "',";
+        $query_insert .= "'" . $_POST["m_skill"] . "',";
+        $query_insert .= "'" . $_POST["m_birthday"] . "',";
+        $query_insert .= "'" . $_POST["m_phone"] . "',";
+        $query_insert .= "'" . $_POST["m_address"] . "',";
+        $query_insert .= "'" . $_POST["m_academic"] . "',";
+        $query_insert .= "'" . $_POST["m_description"] . "',";
+        $query_insert .= "NOW())";
+        //echo $query_insert;
+        mysql_query($query_insert);
+        header("Location: profile.php");
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html>
