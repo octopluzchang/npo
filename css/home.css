@@ -78,25 +78,24 @@ border-bottom: 1px solid #bfbfbf;
 
 .section {
     height: 100vh;
+    min-height: 400px;
 }
 
 .right, .left, .center {
     float: left;
     width: 50%;
-    min-height: 100vh;
  }
 
     .center {
         width: 100%;
-        margin: 50px 0;
+        margin-top: 10VH;
         text-align: center;
-        
     }
 
     .content {
-       /* text-align: center;
+        text-align: center;
         box-sizing: border-box;
-        margin-top: 40vh;*/
+        margin-top: 40vh;
     }
 
 
@@ -130,6 +129,7 @@ border-bottom: 1px solid #bfbfbf;
     width: 500px;
     left: 50%;
     margin-left: -250px;
+    
 }
 
 #landing input {
@@ -146,6 +146,7 @@ border-bottom: 1px solid #bfbfbf;
 position: fixed;
 top: 50%;
 left: 50%;
+overflow: hidden;
 min-width: 100%;
 min-height: 100%;
 width: auto;
@@ -179,6 +180,7 @@ z-index: -3;
 #joinUs {
     z-index: 9;   
 }
+
 
 
 

@@ -81,6 +81,38 @@
         box-sizing: border-box;
         padding: 40px;
     }
+
+        .chatBubble {
+            margin: 20px 0;
+            
+        }
+            .chatBubble span {
+                padding: 10px;
+                color: #fff;
+                border-radius: 30px 0px 20px 0;
+                line-height: 20px;
+                text-align: left;
+            }
+            .your span {
+                background-color: #838586;
+                border-radius: 0px 20px 20px 20px;
+
+            }
+
+            .mine span {
+                background-color: #8215d1;
+                border-radius: 20px 0px 20px 20px;
+                
+            }
+            .chatBubble.your {
+                width: 100%;
+                float: left;
+            }
+            
+            .chatBubble.mine {
+                width: 80%;
+                float: right;
+            }
     #textField {
         bottom: 0;
         background-color: #838586; 
@@ -125,6 +157,10 @@
         border-left: 1px solid #bfbfbf;
         height: 100%;
         padding: 10px;
+        text-align: center;
     }
-    
+        #sigleChatInfo .userName {
+            width: 100%;
+            margin-top: 20px;
+        }
 
