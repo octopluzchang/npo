@@ -3,7 +3,7 @@
 	$db_host = "localhost";
 	$db_table = "npo";
 	$db_username = "root";
-	$db_password = "";
+	$db_password = "test";
 	//設定資料連線
 	if (!@mysql_connect($db_host, $db_username, $db_password)) die("資料連結失敗！");
 	//連接資料庫
