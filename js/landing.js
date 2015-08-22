@@ -30,9 +30,9 @@ function parallax(){
     //$('#landing video').css('opacity',1-(scrolled*0.003));
     //$('#landing .content').css('opacity',1-(scrolled*0.003));
     $('#landing .content').css('margin-top',15-(scrolled*0.1)+'vh');
-    $('#about .content').css('margin-left',-(scrolled*0.5)+'px');
-    //$('#doSomething .content').css('margin-right',500-(scrolled*0.5)+'px');
-    $('#getSomething .content').css('margin-left',1000-(scrolled*0.5)+'px');
+    $('#about .content').css('margin-right',-(scrolled*0.5)+'px');
+    $('#doSomething .content').css('margin-right',500-(scrolled*0.5)+'px');
+    $('#getSomething .content').css('margin-right',1000-(scrolled*0.5)+'px');
   /*$('#bgvid').css('top',-(scrolled*0)+'px');*/
 }
 
