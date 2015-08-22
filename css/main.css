@@ -27,6 +27,8 @@ a {
     color: #622b89 !important; 
 }
 
+    
+
 button, input[type="submit"] {
     height: 40px;
     padding: 10px;
@@ -352,8 +354,14 @@ form#searchBar {
     z-index: 10;
         
 }
+    #profileEditBtn {
+    }
+    #userAvator .edit {
+     position: absolute;   
+    }
+
     #profile .userName {
-        font-size: 16px;
+        font-size: 18px;
         display: inline-block;
         width: 100%;
         
@@ -607,7 +615,7 @@ th {
     font-size: 14px;
     text-align: right !important;
     padding-right: 15px !important;
-    width: 30%;
+    width: 33%;
     color: #999;
 }
 td {
@@ -670,13 +678,19 @@ th .detail {
 }
 
 .new .projectInfo input{
-    height: 40px;   
     margin: 10px;
     border: none;
 }
 
 .new input[name="newProjectName"]{
     font-size: 18px;
+    margin: 10px;
+    border: none;
+}
+
+.new input[name="newProjectTags"]{
+    margin: 10px;
+    border: none;
 }
 
 
@@ -689,3 +703,16 @@ th .detail {
         overflow: visible;
     }
 
+    /* Date Picker Style Adjustment*/
+    #ui-datepicker-div td {
+      height: auto;   
+    }
+
+    #ui-datepicker-div a {
+        color: #fff !important;
+    }
+
+    .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+      background: #8215d1 !important;   
+    }
+    

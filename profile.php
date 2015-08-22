@@ -72,7 +72,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
                     NPO Lab
                 </span>
         </span>
-        <span class="searchBar">
+        <!--<span class="searchBar">
                 <div class="searchBorder">
                     <input class="searchInput" type="text" placeholder="輸入專案名稱或類別">
                     <i class="searchIcon fa fa-search"></i>
@@ -81,7 +81,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
                     <ul>
                     </ul>
                 </div>
-            </span>
+            </span>-->
         <span class="right">
             <!--設定按鈕，暫時先拿掉-->
             <!--<a href="#" data-toggle="modal" data-target=".edit">
@@ -89,6 +89,19 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
             <img src="images/ic_setting.png">
             </span>
         </a>-->
+            <form id="searchBar">
+            <input type="submit" value=" ">
+            <input name="searchBarInput" type="text" placeholder="搜尋專案名稱" class="hidden">
+            
+                <!--<div class="searchBorder">
+                    <input class="searchInput" type="text" placeholder="輸入專案名稱或類別">
+                    <i class="searchIcon fa fa-search"></i>
+                </div>
+                <div class="dropdownTagList">
+                    <ul>
+                    </ul>
+                </div>-->
+            </form>
         <a href="#" data-toggle="modal" data-target=".new">
             <span id="newProject">
             <img src="images/ic_newProject.png">
@@ -97,13 +110,18 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
         </span>
     </div>
     <div id="profile">
+        
         <a href="#" data-toggle="modal" data-target=".edit">
+            
             <div class="userAvator big">
                <img class="img-circle" src="profilepic/<?php echo $row_RecMember["m_profilepic"]; ?>">
+                <div id="profileEditBtn">編輯</div>
             </div>
+            
+            
+            <div class="userName"><?php echo $row_RecMember["m_name"];?></div>
         </a>
-        <div class="userName"><?php echo $row_RecMember["m_name"];?></div>
-        <div class="userTitle">一般使用者的稱號，可省略。</div>
+        
         <ul class="tab">
             <a href="#">
                 <li class="selected">找專案</li>
@@ -377,7 +395,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
                                 </td>
                             </tr>
                             <tr>
-                                <th>更新密碼</th>
+                                <th>輸入更新密碼</th>
                                 <td colspan="2">
                                     <input name="m_passwd" type="password" class="normalinput" id="m_passwd">
                                 </td>
@@ -392,11 +410,10 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
                                 <td>
                                 </td>
                             </tr>
+                            
                         </tbody>
                     </table>
-                    若不修改密碼，請不要填寫。若要修改，請輸入密碼二次。
-                    <br>
-                    若修改密碼，系統會自動登出，請用新密碼登入。
+                    
                 </div>
                 <!--<div class="popUpFooter">
                     <button class="main">儲存</button>

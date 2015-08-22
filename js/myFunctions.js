@@ -86,6 +86,17 @@ $container.imagesLoaded( function() {
 })(jQuery);
 
 $(document).ready(function(){
+//Search Bar behaviour
+    $('#searchBar input[type="submit"]').mouseenter(function(){
+        $('input[name="searchBarInput"]').removeClass('hidden');
+    });
+    $('input[name="searchBarInput"]').mouseleave(function(){
+        if($(this).val().length ==0){
+            $('input[name="searchBarInput"]').addClass('hidden');
+        }
+        
+    });    
+
 //Tab Selector
     $('.tab li').click(function(){
         /*if($('.tab li').hasClass('selected')){
@@ -157,8 +168,10 @@ $(window).scroll(function() {
     var windscroll = $(window).scrollTop();
     if (windscroll >= 195) {
         $('.tab, #profile .userAvator, #profile .userName').addClass('fixed');
+        $('#profileEditBtn').hide();
     } else {
         $('.tab, #profile .userAvator, #profile .userName').removeClass('fixed'); 
+        $('#profileEditBtn').show();
     }
 
 }).scroll();
