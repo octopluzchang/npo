@@ -24,40 +24,25 @@
         </span>
         
         <span class="right">
-            <!--設定按鈕，暫時先拿掉-->
-            <!--<a href="#" data-toggle="modal" data-target=".edit">
-            <span id="editProfile" >
-            <img src="images/ic_setting.png">
-            </span>
-        </a>-->
-        <form id="searchBar">
-            <input type="submit" value=" ">
-            <input name="searchBarInput" type="text" placeholder="搜尋專案名稱" class="hidden">
-            
-                <!--<div class="searchBorder">
-                    <input class="searchInput" type="text" placeholder="輸入專案名稱或類別">
-                    <i class="searchIcon fa fa-search"></i>
-                </div>
-                <div class="dropdownTagList">
-                    <ul>
-                    </ul>
-                </div>-->
-            </form>
             
         
-            <span id="newProject" data-toggle="modal" data-target=".new">
-            <img src="images/ic_newProject.png">
-                <span style="display:none">建立新專案</span>
-            </span>
+            <a href="chatroom.html" target="_blank">
+            <img src="images/ic_chat.png">
+            </a>
         </span>
     </div>
     <div id="profile">
-        <a href="#" data-toggle="modal" data-target=".edit">
+
             <div class="userAvator big">
             </div>
-        </a>
-        <div class="userName">一般使用者暱稱</div>
-        <div class="userTitle">一般使用者的稱號，可省略。</div>
+        <div class="userName">使用者ID</div>
+        <div class="userTitle">更多關於這個使用者的描述，使用者想對大家說的話都可以寫在這裡</div>
+        <ul class="tagContainer">
+                        <li>平面設計</li>
+                        <li>網頁設計</li>
+                        <li>行銷規劃</li>
+                        <li>專案規劃</li>
+                    </ul>
         <ul class="tab">
             <li class="selected" value="2">進行中的專案</li>
             <li value="3">已完成的專案</li>
@@ -155,162 +140,7 @@
             </div>
         </div>
     </div>
-    <div class="singleProfile modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="popUpHeader">
-                    <form class="actionContainer">
-                        <input type="submit" value="聊天">
-                        <span data-dismiss="modal">關閉</span>
-                    </form>
-                    <div class="userAvator big"></div>
-                    <br>
-                    <div class="userName">一般使用者暱稱</div>
-                    <div class="userTitle">一般使用者的稱號，可省略。</div>
-                    <ul class="tagContainer">
-                        <li>平面設計</li>
-                        <li>網頁設計</li>
-                        <li>行銷規劃</li>
-                        <li>專案規劃</li>
-                    </ul>
-                </div>
-                <div class="popUpContent">
-                </div>
-                <!--<div class="popUpFooter">
-                    <button>傳送即時訊息</button>
-                    <button data-dismiss="modal">取消</button>
-                </div>-->
-            </div>
-        </div>
-    </div>
-    <div class="new modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="projectImage">
-                    <button>上傳圖片</button>
-                </div>
-                <div class="popUpHeader">
-                    <form class="actionContainer">
-                        <input type="submit" value="發佈">
-                        <input type="submit" value="儲存">
-                        <span data-dismiss="modal">關閉</span>
-                    </form>
-                    
-                    <div class="projectInfo">
-                        <input name="newProjectName" placeholder="專案名稱">
-                    <ul class="tagContainer">
-                        <input name="newProjectTags" placeholder="新增標籤">
-                    </ul>
-                        <div>
-                            <input placeholder="專案人數上線" name="newProjectJoin">
-                        </div>
-                        <div>
-                            <input placeholder="專案開始時間" name="newProjectDate">
-                        </div>
-                        <div>
-                            <input placeholder="專案結束時間" name="newProjectDate">
-                        </div>
-                    </div>
-                </div>
-                <div class="popUpContent">
-                    <textarea placeholder="專案敘述"></textarea>
-                </div>
-                <!--<div class="popUpFooter">
-                    <button class="main">發佈</button>
-                    <button data-dismiss="modal">取消</button>
-                </div>-->
-            </div>
-        </div>
-    </div>
-    <div class="edit modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="popUpHeader">
-                    <div class="actionContainer">
-                        <span class="main">儲存</span>
-                        <span>登出</span>
-                        <span data-dismiss="modal">關閉</span>
-                    </div>
-                    <h3>編輯個人資料</h3>
-                </div>
-                <div class="popUpContent">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>大頭照</th>
-                                <td colspan="2">
-                                    <span class="userAvator"></span>
-                                    <button>上傳照片</button>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>暱稱</th>
-                                <td colspan="2">
-                                    <input type="text" placeholder="" value="一般使用者暱稱">
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>稱號</th>
-                                <td colspan="2">
-                                    <input type="text" placeholder="" value="一般使用者的稱號，可省略。">
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>Email</th>
-                                <td colspan="2">
-                                    <input type="text" placeholder="" value="XXXX@xxx.com">
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>技能</th>
-                                <td colspan="2">
-                                    <input type="text" placeholder="填入你的技能標籤">
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>隱私設定</th>
-                                <td colspan="2">
-                                    <label>
-                                        <input type="checkbox">別人無法傳送訊息給我</label>
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>舊密碼</th>
-                                <td colspan="2">
-                                    <input type="password">
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>新密碼</th>
-                                <td colspan="2">
-                                    <input type="password">
-                                </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>再輸入一次新密碼</th>
-                                <td colspan="2">
-                                    <input type="password">
-                                </td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!--<div class="popUpFooter">
-                    <button class="main">儲存</button>
-                    <button data-dismiss="modal">取消</button>
-                </div>-->
-            </div>
-        </div>
-    </div>
+    
 </body>
 
 </html>

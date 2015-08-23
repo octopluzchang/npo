@@ -107,6 +107,12 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
             <img src="images/ic_newProject.png">
             </span>
         </a>
+            
+        <a href="chatroom.html" target="_blank">
+            <span id="chatroom">
+            <img src="images/ic_chat.png">
+            </span>
+        </a>
         </span>
     </div>
     <div id="profile">
@@ -121,7 +127,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
             
             <div class="userName"><?php echo $row_RecMember["m_name"];?></div>
         </a>
-        
+        <div class="userTitle">更多關於這個使用者的描述，使用者想對大家說的話都可以寫在這裡</div>
         <ul class="tab">
             <a href="#">
                 <li class="selected">找專案</li>
