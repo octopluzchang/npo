@@ -1,6 +1,12 @@
 .sectionTitle {
     border-bottom: 1px solid #bfbfbf;
-    padding: 20px;
+    padding: 10px;
+    height: 40px;
+    background-color: #fff;
+    float: left;
+    width: 100%;
+    text-align: center;
+    position: relative;
 }
 #sidebar{
     position: fixed;
@@ -8,50 +14,203 @@
     left: 0;
     height: 100%;
     border-right: 1px solid #bfbfbf;
-    width: 300px;
+    width: 25%;
     padding-top: 50px;
+    overflow: hidden;
 }
+#singleChatContainer{
+    overflow-y: scroll;
+    height: inherit;
     
-    .singleChatItem {
-           
-    }
+    
+}
 
+    .singleChatItemSearch {
+        width:100%;
+        border: none;
+        border-bottom: 1px solid #999;
+    }
+    .singleChatItem {
+        border-bottom: 1px solid #bfbfbf;
+        padding: 15px;
+        float: left;
+        width: 100%;
+        cursor: pointer;
+    }
+        .singleChatItem:hover {
+            opacity: 0.8;
+        }
+
+        .singleChatItem .userAvator {
+            float: left;
+            margin-right: 10px;
+    }
+        .singleChatItem .userName {
+            padding: 0;
+            vertical-align:;
+            display: inline-block;
+            width: 100%;
+            padding-left: 45px;
+            margin-left: -45px;
+            float: left;
+            white-space: nowrap;
+            overflow:hidden !important;
+            text-overflow: ellipsis;
+            font-size: 16px;
+    }
+        .singleChatItem .context {
+            padding: 0;
+            display: inline-block;
+            width: 100%;
+            padding-left: 45px;
+            margin-left: -45px;
+            float: left;
+            white-space: nowrap;
+            overflow:hidden !important;
+            text-overflow: ellipsis;
+            font-size: 13px;
+            color: #999;
+    }
 
 /* Main */
 #main {
-    position: fixed;
-    padding-left: 300px;
+    margin-left: 25%;
     padding-top:50px;
-    width: 100%;
+    width: 75%;
     height: 100%;
 }
 
 #singleChatroom {
-    float: left;
-    width: 60%;
+    float: right;
+    width: 67%;
     height: 100%;
+    margin-top: -40px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-top: -40px;
+    
 }
+    #chatContainer{
+        width:100%;
+        float: left;
+        height: 100%;
+        margin-bottom: -40px;
+        box-sizing: border-box;
+        padding: 40px;
+        overflow-y: scroll;
+    }
 
-    #singleChatroom form {
-        position: fixed;
+        .chatBubble {
+            margin: 20px 0;
+            
+        }
+            .chatBubble span {
+                padding: 10px;
+                color: #fff;
+                border-radius: 30px 0px 20px 0;
+                line-height: ㄉ0px;
+                text-align: left;
+                padding: 10 20px;
+                word-break: break-all;
+            }
+            
+            .your span {
+               background-color: #838586;
+                display: inline-block;
+                border-radius: 0px 20px 20px 20px;
+
+            }
+            
+            .your .userAvator {
+                border-radius: 50%;
+                margin: 10px;
+                height: 40px;
+            }
+            
+            .mine span {
+               background-color: #8215d1;
+                display: inline-block;
+                border-radius: 20px 0px 20px 20px;
+                
+                
+            }
+            .chatBubble.your {
+                width: 100%;
+                float: left;
+                 
+            }
+            
+            .chatBubble.mine {
+                float: right;
+                width: 100%;
+                width: auto;
+                max-width: 80%;
+                
+            }
+
+                .chatTime {
+                    font-size: 12px;
+                    margin-right: 5px;
+                    text-align: center;
+                    vertical-align:bottom;
+                    border-bottom: 1px solid #c1c1c1;
+                    padding: 10px;
+                    color:#999;
+                    float: left;
+                    width: 100%;
+                    margin-top: 30px;
+                }
+
+
+    #textField {
         bottom: 0;
         background-color: #838586; 
         margin: 0;
+        width:100%;
+        float: left;
+        height: 40px;
+        position: relative;
     }
 
-        #singleChatroom form textarea {
+        #textInput {
             background-color: #fff;
             display: inline-block;
             float: left;
-        }
-        
-        #singleChatroom form input {
-            float: left;
+            width: 80%;
+            height: 100%;
         }
 
-#sigleChatInfo {
-    float: left;
-    border-left: 1px solid #bfbfbf;
+            #textInput input {
+                width: 100% !important;
+                padding: 0 10px;
+                height: 100%;
+            }
+        
+        #singleChatroom form input[type="submit"] {
+            float: left;
+            width: 20%;
+            height: 100% !important;
+            border: none;
+        }
+
+#sigleChatInfoContainer {
+    float: right;
     height: 100%;
+    width: 33%;
+    margin-top: -40px;
+    box-sizing: border-box;
+    padding-top: 40px;
+    
+    
 }
+    #sigleChatInfo {
+        border-left: 1px solid #bfbfbf;
+        height: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+        #sigleChatInfo .userName {
+            width: 100%;
+            margin-top: 20px;
+        }
 
