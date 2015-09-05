@@ -57,6 +57,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
     <link rel="stylesheet" href="css/search.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="css/chatroom.css" type="text/css">
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/dynamicgrid.js"></script>
     <script type="text/javascript" src="js/myFunctions.js"></script>
@@ -108,13 +109,151 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
             </span>
         </a>
             
-        <a href="chatroom.html" target="_blank">
+
             <span id="chatroom">
             <img src="images/ic_chat.png">
             </span>
-        </a>
         </span>
     </div>
+     <!--sidebar-->
+    <div id="sidebar" class="hidden">
+        <div class="sectionTitle">
+        聊天室列表
+           
+        </div>
+        <div>
+    <input placeholder="尋找使用者ID" type="text" class="singleChatItemSearch">
+        </div>
+        
+        <div id="singleChatContainer">
+            
+        
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">BlablablaBlablablaBlablablaBlablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">BlablablaBlablablaBlablablaBlablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">BlablablaBlablablaBlablablaBlablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">BlablablaBlablablaBlablablaBlablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">Blablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">Blablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">Blablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">Blablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">Blablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">Blablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">Blablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">Blablabla...</div>
+        </div>
+        <div class="singleChatItem">
+            <span class="userAvator small"></span>
+            <span class="userName">使用者ID</span>
+            <div class="context">Blablabla...</div>
+        </div>
+        </div>
+    </div>
+    <!--chatroom-->
+    <div id="main" class="hidden">
+        <div class="sectionTitle">
+        聊天室
+             <span class="closeChat">關閉聊天</span>
+        </div>
+        
+    <div id="sigleChatInfoContainer">
+        
+        <div id="sigleChatInfo">
+            <span class="userAvator big"></span>
+        <span class="userName">使用者ID</span>
+            <ul class="tagContainer">
+                        <li>平面設計</li>
+                        <li>網頁設計</li>
+                        <li>行銷規劃</li>
+                        <li>專案規劃</li>
+                        <li>網頁設計</li>
+                        <li>行銷規劃</li>
+                        <li>專案規劃</li>
+                    </ul>
+        
+        </div>
+    </div>
+    <div id="singleChatroom">
+        
+        <div id="chatContainer">
+        <div class="chatTime">8/20 的對話</div>
+            
+            <div class="chatBubble your">
+                <span class="userAvator small"></span><span>BlablablaBlablablaBlablablaBlablabla...</span></div>
+            <div class="chatBubble mine"><span>BlablablaBlablablaBlablablaBlablabla...</span></div>
+            
+            <div class="chatBubble your"><span class="userAvator small"></span><span>BlablablaBlablablaBlablablaBlablabla...</span></div>
+            <div class="chatBubble mine"><span>BlablablaBlablablaBlablablaBlablabla...BlablablaBlablablaBlablablaBlablabla...BlablablaBlablablaBlablablaBlablabla...</span></div>
+            <div class="chatBubble mine"><span>BlablablaBlablablaBlablablaBla...BlablablaBlablablaBlablablaBlablabla...BlablablaBlablablaBlablablaBlablabla...</span></div>
+            <div class="chatBubble mine"><span>BlablablaBlablablaBlablablaBlblabla...</span></div>
+            
+        <div class="chatTime">8/21 的對話</div>
+            <div class="chatBubble your">                <span class="userAvator small"></span><span>Hello</span></div>
+            <div class="chatBubble mine"><span>Hello</span></div>
+            
+            <div class="chatBubble your">                <span class="userAvator small"></span><span>最近的專案做的如何？</span></div>
+            <div class="chatBubble mine"><span>還查一些些。對了，你可以幫我一點小忙嗎？你之前提供的資料有點錯誤，請幫我修正一下，3Q!</span></div>
+        </div>
+        <form id="textField">
+            <div id="textInput">
+                <input>
+            </div>
+            <input type="submit" value="送出">
+        </form>
+    </div>
+    
+        
+    </div>
+    
+    
+    <!--main page-->
+
     <div id="profile">
         
         <a href="#" data-toggle="modal" data-target=".edit">
@@ -185,7 +324,6 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
         <?php } ?>
 
     </div>
-
     <!--single project start-->
     
     <script type="text/javascript">
@@ -196,7 +334,10 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
             });
         }
     </script>
-
+    
+    
+<!--popups-->
+    <!--check project itself-->
     <div class="singleProject modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -261,7 +402,9 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
             </div>
         </div>
     </div>
-    <!--project owner modal-->
+    
+
+    <!--check project owner-->
     <div class="singleProfile modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -291,6 +434,8 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
             </div>
         </div>
     </div>
+    
+    <!--create new project-->
     <div class="new modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -323,6 +468,8 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
             </div>
         </div>
     </div>
+    
+    <!--edit my profile-->
     <div class="edit modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

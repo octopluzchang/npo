@@ -86,13 +86,37 @@ $container.imagesLoaded( function() {
 })(jQuery);
 
 $(document).ready(function(){
+//Side Bar Behaviour
+    $('.navigationBar #chatroom').click (function(){
+        $('#sidebar').toggleClass('hidden');
+        $('#profile').toggleClass('withSidebar');
+        $('.pool').toggleClass('withSidebar');
+        $('.userAvator').toggleClass('withSidebar');
+        $('.userName').toggleClass('withSidebar');
+        $('.tab').toggleClass('withSidebar');
+        $('#main').addClass('hidden');
+    });
+    
+    // Open a chatroom
+    $('.singleChatItem').click(function(){
+        $('#main').removeClass('hidden');
+    });
+    
+    //Close a chatroom
+    $('.closeChat').click(function(){
+        $('#main').addClass('hidden');
+    });
+    
+    
+    
+    
 //Search Bar behaviour
     $('#searchBar input[type="submit"]').mouseenter(function(){
         $('input[name="searchBarInput"]').removeClass('hidden');
     });
     $('input[name="searchBarInput"]').mouseleave(function(){
         if($(this).val().length ==0){
-            $('input[name="searchBarInput"]').addClass('hidden');
+            $('input[name="searchBarInput"]').removeClass('hidden');
         }
         
     });    

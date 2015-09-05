@@ -1,7 +1,7 @@
 .sectionTitle {
     border-bottom: 1px solid #bfbfbf;
-    padding: 10px;
-    height: 40px;
+    padding: 18px;
+    height: 55px;
     background-color: #fff;
     float: left;
     width: 100%;
@@ -17,7 +17,13 @@
     width: 25%;
     padding-top: 50px;
     overflow: hidden;
+    z-index: 99;
+    background-color: #f2f2f2;
 }
+
+    #sidebar.hidden {
+        display: none;
+    }
 #singleChatContainer{
     overflow-y: scroll;
     height: inherit;
@@ -78,6 +84,10 @@
     padding-top:50px;
     width: 75%;
     height: 100%;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    background-color: #f2f2f2;
 }
 
 #singleChatroom {
@@ -90,6 +100,14 @@
     padding-top: -40px;
     
 }
+    .closeChat {
+        float: left;
+    }
+    
+    #singleChatroom.hidden {
+        display: none;
+    }
+
     #chatContainer{
         width:100%;
         float: left;
