@@ -119,7 +119,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
     <div id="sidebar" class="hidden">
         <div class="sectionTitle">
         聊天室列表
-           
+           <span class="closeChatList"><img src="images/ic_minimize.png"/></span>
         </div>
         <div>
     <input placeholder="尋找使用者ID" type="text" class="singleChatItemSearch">
@@ -199,7 +199,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
     <div id="main" class="hidden">
         <div class="sectionTitle">
         聊天室
-             <span class="closeChat">關閉聊天</span>
+             <span class="closeChat"><img src="images/ic_minimize.png"/></span>
         </div>
         
     <div id="sigleChatInfoContainer">
@@ -262,8 +262,7 @@ $board_total_pages = ceil($board_total_records / $board_pageRow_records);
                <img class="img-circle" src="profilepic/<?php echo $row_RecMember["m_profilepic"]; ?>">
                 <div id="profileEditBtn">編輯</div>
             </div>
-            
-            
+            <br>
             <div class="userName"><?php echo $row_RecMember["m_name"];?></div>
         </a>
         <div class="userTitle">更多關於這個使用者的描述，使用者想對大家說的話都可以寫在這裡</div>

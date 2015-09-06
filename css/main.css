@@ -28,6 +28,9 @@ a {
     color: #622b89 !important; 
 }
 
+    a:focus {
+        text-decoration: none !important;
+    }
     
 
 button, input[type="submit"] {
@@ -127,7 +130,7 @@ input[type="submit"]{
 
 }
 
-#editProfile, #newProject{
+#editProfile, #newProject, #chatroom{
     margin-left:20px;
     color: #fff;
     font-size: 15px;
@@ -183,7 +186,7 @@ form#searchBar {
     background-position: right;
     background-repeat: no-repeat;
     background-position:center;
-    width: 40px;
+    min-width: 40px;
     clear: both;
     height: 40px;
     border: none;
@@ -366,8 +369,6 @@ form#searchBar {
 
     #profile .userName {
         font-size: 18px;
-        display: inline-block;
-        width: 100%;
         
 }
 

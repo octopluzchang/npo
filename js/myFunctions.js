@@ -87,7 +87,7 @@ $container.imagesLoaded( function() {
 
 $(document).ready(function(){
 //Side Bar Behaviour
-    $('.navigationBar #chatroom').click (function(){
+    $('.navigationBar #chatroom, .closeChatList').click (function(){
         $('#sidebar').toggleClass('hidden');
         $('#profile').toggleClass('withSidebar');
         $('.pool').toggleClass('withSidebar');
@@ -110,13 +110,14 @@ $(document).ready(function(){
     
     
     
+    
 //Search Bar behaviour
-    $('#searchBar input[type="submit"]').mouseenter(function(){
+    $('#searchBar input[type="submit"]').click(function(){
         $('input[name="searchBarInput"]').removeClass('hidden');
     });
-    $('input[name="searchBarInput"]').mouseleave(function(){
+    $('input[name="searchBarInput"]').blur(function(){
         if($(this).val().length ==0){
-            $('input[name="searchBarInput"]').removeClass('hidden');
+            $('input[name="searchBarInput"]').addClass('hidden');
         }
         
     });    

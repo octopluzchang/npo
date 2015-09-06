@@ -1,8 +1,8 @@
 .sectionTitle {
     border-bottom: 1px solid #bfbfbf;
-    padding: 18px;
-    height: 55px;
+    padding: 12px;
     background-color: #fff;
+    line-height: 28px;
     float: left;
     width: 100%;
     text-align: center;
@@ -24,6 +24,7 @@
     #sidebar.hidden {
         display: none;
     }
+
 #singleChatContainer{
     overflow-y: scroll;
     height: inherit;
@@ -100,8 +101,9 @@
     padding-top: -40px;
     
 }
-    .closeChat {
+    .closeChat, .closeChatList {
         float: left;
+        cursor: pointer;
     }
     
     #singleChatroom.hidden {
@@ -112,9 +114,9 @@
         width:100%;
         float: left;
         height: 100%;
-        margin-bottom: -40px;
+        margin-bottom: -55px;
         box-sizing: border-box;
-        padding: 40px;
+        padding: 55px;
         overflow-y: scroll;
     }
 
@@ -206,7 +208,7 @@
         
         #singleChatroom form input[type="submit"] {
             float: left;
-            width: 20%;
+            min-width: 20%;
             height: 100% !important;
             border: none;
         }
